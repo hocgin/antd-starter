@@ -18,7 +18,9 @@
     "antd": "^3.19.5",
     
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "moment": "latest",
+    "hash.js": "latest"
   },
   "devDependencies": {
     
