@@ -1,4 +1,4 @@
-import Config from '@/utils/Config';
+import Config from '@/config';
 import hash from 'hash.js';
 
 export default function Request(
@@ -8,7 +8,7 @@ export default function Request(
 
   // 补充host
   if (!`${url}`.startsWith('http')) {
-    url = `${Config.getConfigs().host()}${url}`;
+    url = `${Config.getConfigs().host}${url}`;
   }
 
   const defaultOptions = {

@@ -5,7 +5,9 @@ export default class Config {
    */
   static defaultConfig = {
     // 请求地址
-    host: "http://127.0.0.1:8080"
+    host: "http://127.0.0.1:8080",
+    // 开发模式
+    dev: true
   };
 
   /**

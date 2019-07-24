@@ -3,7 +3,7 @@ import moment from 'moment';
 /**
  * 统一处理时间格式化
  */
-export default class DateFormatter {
+export default class Formatter {
 
   /**
    * 格式化时间
