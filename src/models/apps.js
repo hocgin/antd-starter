@@ -1,7 +1,7 @@
 import qs from "query-string";
 
 export default {
-  namespace: 'app',
+  namespace: 'apps',
   subscriptions: {
     setup({ dispatch, history }, done) {
       return history.listen(({ pathname, search }) => {
