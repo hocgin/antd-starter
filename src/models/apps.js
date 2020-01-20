@@ -1,4 +1,4 @@
-import qs from "query-string";
+import qs from 'query-string';
 
 export default {
   namespace: 'apps',
@@ -7,11 +7,11 @@ export default {
       return history.listen(({ pathname, search }) => {
         const query = qs.parse(search);
         switch (pathname) {
-          case '/':{
+          case '/': {
             // TODO
             break;
           }
-          default:{
+          default: {
             console.log(pathname);
           }
         }

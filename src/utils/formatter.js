@@ -4,6 +4,7 @@ import moment from 'moment';
  * 统一处理时间格式化
  */
 export default class Formatter {
+  static yyyyMMdd = 'yyyyMMdd';
 
   /**
    * 格式化时间
