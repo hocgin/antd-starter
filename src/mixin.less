@@ -4,3 +4,9 @@
  * ============
  **/
 @fontColor: rgba(0, 0, 0, 0.65);
+
+.mobile(@rules) {
+  @media only screen and (max-width: 800px) {
+    @rules();
+  }
+}
