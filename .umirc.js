@@ -1,31 +1,16 @@
-import { defineConfig, utils } from 'umi';
-
-const { winPath } = utils;
-
 // ref: https://umijs.org/config/
-export default defineConfig({
+export default {
   title: 'title',
   antd: {},
-  dva: {
-    hmr: true,
-  },
-  locale: {
-    default: 'zh-CN',
-    baseNavigator: true,
-  },
-  exportStatic: {
-    htmlSuffix: true,
-    dynamicRoot: true,
-  },
+  dva: {},
   outputPath: './dist',
-  lessLoader: { javascriptEnabled: true },
   routes: [
     {
       path: '/',
-      component: '../layouts/index',
+      component: '@/layouts/index',
       routes: [
-        { path: '/', component: '../pages/index' },
+        { path: '/', component: './index' },
       ],
     },
   ],
-});
+};
