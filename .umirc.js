@@ -1,25 +1,31 @@
+import { defineConfig, utils } from 'umi';
+
+const { winPath } = utils;
 
 // ref: https://umijs.org/config/
-export default {
-  treeShaking: true,
-  plugins: [
-    // ref: https://umijs.org/plugin/umi-plugin-react.html
-    ['umi-plugin-react', {
-      antd: true,
-      dva: true,
-      dynamicImport: false,
-      title: 'antd-starter',
-      dll: false,
-      
-      routes: {
-        exclude: [
-          /models\//,
-          /services\//,
-          /model\.(t|j)sx?$/,
-          /service\.(t|j)sx?$/,
-          /components\//,
-        ],
-      },
-    }],
+export default defineConfig({
+  title: 'title',
+  antd: {},
+  dva: {
+    hmr: true,
+  },
+  locale: {
+    default: 'zh-CN',
+    baseNavigator: true,
+  },
+  exportStatic: {
+    htmlSuffix: true,
+    dynamicRoot: true,
+  },
+  outputPath: './dist',
+  lessLoader: { javascriptEnabled: true },
+  routes: [
+    {
+      path: '/',
+      component: '../layouts/index',
+      routes: [
+        { path: '/', component: '../pages/index' },
+      ],
+    },
   ],
-}
+});
