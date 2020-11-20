@@ -1,16 +1,22 @@
 // ref: https://umijs.org/config/
-export default {
+import { defineConfig } from 'umi';
+
+export default defineConfig({
   title: 'title',
   antd: {},
   dva: {},
+  exportStatic: {
+    htmlSuffix: true,
+    dynamicRoot: true,
+  },
   outputPath: './dist',
   routes: [
     {
       path: '/',
       component: '@/layouts/index',
       routes: [
-        { path: '/', component: './index' },
+        { path: '/', component: '@/pages/index' },
       ],
     },
   ],
-};
+});

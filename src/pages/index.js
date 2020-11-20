@@ -1,7 +1,9 @@
 import styles from './index.less';
+import API from '@/services/api';
 
 
 export default function() {
+  API.worked({});
   return (
     <div className={styles.normal}>
       <div className={styles.welcome} />

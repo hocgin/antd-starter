@@ -5,11 +5,7 @@ export default function Request(
   url,
   options,
 ) {
-
-  // 补充host
-  if (!`${url}`.startsWith('http')) {
-    url = `${Config.getConfigs().host}${url}`;
-  }
+  url = `${baseUrl}${url}`;
 
   const defaultOptions = {
     credentials: 'include',
@@ -28,6 +24,8 @@ export default function Request(
         ...newOptions.headers,
       };
 
+      newOptions.headers['X-Page-Url'] = window.location.href;
+      newOptions.headers['X-Requested-With'] = 'XMLHttpRequest';
       newOptions.headers['Content-Type'] = 'application/json; charset=UTF-8';
       newOptions.headers['Origin'] = url;
       newOptions.body = JSON.stringify(newOptions.body);
