@@ -5,11 +5,18 @@ export default defineConfig({
   title: 'title',
   antd: {},
   dva: {},
-  exportStatic: {
-    htmlSuffix: true,
-    dynamicRoot: true,
-  },
   outputPath: './dist',
+  // exportStatic: {
+  //   htmlSuffix: true,
+  //   dynamicRoot: true,
+  // },
+  // proxy: {
+  //   '/chaos': {
+  //     'target': 'http://jsonplaceholder.typicode.com/',
+  //     'changeOrigin': true,
+  //     'pathRewrite': { '^/chaos': '' },
+  //   },
+  // },
   routes: [
     {
       path: '/',
