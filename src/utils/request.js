@@ -5,7 +5,7 @@ export default function Request(
   url,
   options,
 ) {
-  url = `${baseUrl}${url}`;
+  url = `${Config.getBaseUrl()}${url}`;
 
   const defaultOptions = {
     credentials: 'include',

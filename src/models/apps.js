@@ -1,9 +1,18 @@
 import qs from 'query-string';
 
+let initState = {
+  paging: null,
+  detail: null,
+  complete: [],
+};
 export default {
   namespace: 'apps',
-  state: {},
-  effects: {},
+  state: initState,
+  effects: {
+    * worked({ payload, callback }, { call, put }) {
+      console.log('worked');
+    },
+  },
   reducers: {},
   subscriptions: {
     setup({ dispatch, history }, done) {

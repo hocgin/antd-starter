@@ -27,4 +27,8 @@ export default class Config {
   static isDev() {
     return process.env.NODE_ENV === 'development';
   }
+
+  static getBaseUrl() {
+    return baseUrl;
+  }
 }
