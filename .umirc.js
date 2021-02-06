@@ -5,6 +5,9 @@ export default defineConfig({
   title: 'title',
   antd: {},
   dva: {},
+  ssr: {
+    devServerRender: false,
+  },
   outputPath: './dist',
   // exportStatic: {
   //   htmlSuffix: true,
