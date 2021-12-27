@@ -1,7 +1,7 @@
-import { request } from '@hocgin/ui';
+import { request, usePost, Utils } from '@hocgin/ui';
 import { stringify } from 'query-string';
 
-export default class TplApi {
+export default class {
 
   static getOne({ id, ...payload }: any) {
     let queryString = stringify(payload);
@@ -13,21 +13,21 @@ export default class TplApi {
   static paging(payload: any) {
     return request(`/ums/user-group/_paging`, {
       method: 'POST',
-      body: { ...payload },
+      data: { ...payload },
     });
   }
 
   static insert(payload: any) {
     return request(`/ums/user-group`, {
       method: 'POST',
-      body: { ...payload },
+      data: { ...payload },
     });
   }
 
   static update({ id, ...payload }: any) {
     return request(`/ums/user-group/${id}`, {
       method: 'PUT',
-      body: { ...payload },
+      data: { ...payload },
     });
   }
 
@@ -39,9 +39,11 @@ export default class TplApi {
   }
 
   static complete(payload = {}) {
-    return request(`/ums/user-group/_complete`, {
-      method: 'POST',
-      body: { ...payload },
-    });
+    return usePost(`/ums/user-group/_complete`, { data: { ...payload } })
+      .then(Utils.Struct.thenShowErrorIfExits).then(Utils.Struct.thenData)
+      .then((data = []) => data.map(({ typeName, encoding, id }: any) => ({
+        key: encoding, value: id,
+        description: typeName,
+      })));
   }
 }

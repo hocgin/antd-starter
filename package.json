@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "start": "umi dev",
+    "start:nomock": "MOCK=none umi dev",
     "build": "UMI_ENV=prod umi build",
     "build:local": "UMI_ENV=local umi build",
     "build:dev": "UMI_ENV=dev umi build",
@@ -24,7 +25,7 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
-    "@hocgin/ui": "^4.0.14",
+    "@hocgin/ui": "^4.0.39",
     "ahooks": "^2.10.12",
     "antd": "^4.17.2",
     "classnames": "^2.3.1",

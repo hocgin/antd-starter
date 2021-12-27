@@ -12,7 +12,7 @@ export default defineConfig({
   fastRefresh: {},
   proxy: {
     '/api': {
-      // target: 'https://api-dev.hocgin.top/',
+      // => 转到服务端地址
       target: 'http://127.0.0.1:20001/',
       changeOrigin: true,
       pathRewrite: { '^/api': '' },

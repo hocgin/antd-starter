@@ -28,8 +28,13 @@ export default class Config {
     return process.env.NODE_ENV === 'development';
   }
 
+  static getSsoServerUrl() {
+    // @ts-ignore
+    return ssoServerUrl;
+  }
+
   static getBaseUrl() {
-    // @ts-ignore 这是环境变量
+    // @ts-ignore
     return baseUrl;
   }
 }
