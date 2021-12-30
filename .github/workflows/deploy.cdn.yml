@@ -65,4 +65,4 @@ jobs:
           source_dir: 'dist'
           dest_dir: ${{github.event.repository.name}}
           ignore_source_map: true
-          exclude: "dist/index.html"
+          exclude: "index.html"
