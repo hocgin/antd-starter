@@ -1,3 +1,4 @@
+import { isBrowser } from 'umi';
 import Config from './config';
 import moment from 'moment';
 import { RequestConfig, ErrorShowType } from 'umi';
@@ -63,8 +64,13 @@ export const request: RequestConfig = {
         newOptions.headers['X-Username'] = 'hocgin';
       }
 
+      let pageUrl = 'https://www.hocgin.top';
+      if (isBrowser()) {
+        pageUrl = window.location.href;
+      }
+
       newOptions.headers = {
-        'X-Page-Url': window.location.href,
+        'X-Page-Url': pageUrl,
         'X-Requested-With': 'XMLHttpRequest',
         'Content-Type': 'application/json; charset=UTF-8',
         Origin: url,
@@ -79,11 +85,16 @@ export const request: RequestConfig = {
     (response: Response, options: any) => {
       console.debug('[响应拦截器]::', '认证检查');
       if (response.status === 401) {
-        response.clone().json().then(({ redirectUrl }: any) => {
-          window.location.href = `${Config.getSsoServerUrl()}?redirectUrl=${
-            redirectUrl ?? window.location.href
-          }`;
-        });
+        response
+          .clone()
+          .json()
+          .then(({ redirectUrl }: any) => {
+            if (isBrowser()) {
+              window.location.href = `${Config.getSsoServerUrl()}?redirectUrl=${
+                redirectUrl ?? window.location.href
+              }`;
+            }
+          });
         throw new Error('认证失败');
       }
       return response;

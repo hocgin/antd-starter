@@ -1,6 +1,9 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
+  ssr: {
+    devServerRender: true,
+  },
   define: {
     // api 地址
     baseUrl: 'http://127.0.0.1:8000',
@@ -8,7 +11,6 @@ export default defineConfig({
     ssoServerUrl: 'http://127.0.0.1:8000/login',
   },
   hash: true,
-  favicon: 'https://hocg.in/favicon.ico',
   // cdn 地址
-  publicPath: `https://127.0.0.1:8000/${__dirname.split('/').pop()}/`,
+  publicPath: `https://cdn.hocgin.top/${__dirname.split('/').pop()}/`,
 });

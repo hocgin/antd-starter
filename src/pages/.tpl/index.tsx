@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 const Index: React.FC<{
   /**
@@ -6,8 +6,7 @@ const Index: React.FC<{
    */
   className?: string;
 }> = (props, ref) => {
-
-  return (<div> 你好 </div>);
+  return <div> 你好 </div>;
 };
 
 export default Index;

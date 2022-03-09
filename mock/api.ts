@@ -1,7 +1,10 @@
 import { success } from './utils/result';
 
 export default {
-  'GET /worked': (req: any, res: any) => {
+  'GET /api/worked': (req: any, res: any) => {
     return res.json(success());
+  },
+  'GET /api/ssr': (req: any, res: any) => {
+    return res.json(success('ssr'));
   },
 };

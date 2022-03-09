@@ -4,6 +4,8 @@
     "start": "umi dev",
     "start:nomock": "MOCK=none umi dev",
     "build": "UMI_ENV=prod umi build",
+    "build:local.ssr": "UMI_ENV=local.ssr umi build",
+    "build:prod.ssr": "UMI_ENV=prod.ssr umi build",
     "build:cdn": "UMI_ENV=prod.cdn umi build",
     "build:local": "UMI_ENV=local umi build",
     "build:dev": "UMI_ENV=dev umi build",

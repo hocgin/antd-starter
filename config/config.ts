@@ -1,13 +1,17 @@
 import { defineConfig } from 'umi';
-import routerConfig from './config/router.config';
+import routerConfig from '../src/router.config';
 
 export default defineConfig({
   title: 'HOCGIN',
   antd: {},
   dva: {},
   outputPath: './dist',
+  favicon: 'https://hocg.in/favicon.ico',
   nodeModulesTransform: {
     type: 'none',
+  },
+  manifest: {
+    fileName: `manifest.json`,
   },
   fastRefresh: {},
   proxy: {
