@@ -103,6 +103,15 @@ jobs:
         run: npm run build:prod.ssr
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
+      - uses: hocgin/action-qiniu-upload@master
+        with:
+          access_key: ${{ secrets.QINIU_ACCESS_KEY }}
+          secret_key: ${{ secrets.QINIU_SECRET_KEY }}
+          bucket: ${{ secrets.QINIU_BUCKET }}
+          source_dir: 'dist'
+          dest_dir: ${{github.event.repository.name}}
+          ignore_source_map: true
+          exclude: "index.html"
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       # 设置 Docker 编译环境
