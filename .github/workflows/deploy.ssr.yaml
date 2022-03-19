@@ -112,6 +112,7 @@ jobs:
           dest_dir: ${{github.event.repository.name}}
           ignore_source_map: true
           exclude: "index.html"
+          overwrite: ture
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       # 设置 Docker 编译环境
