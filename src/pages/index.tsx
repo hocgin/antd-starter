@@ -1,9 +1,17 @@
 import styles from './index.less';
+import { Container } from '@/components';
+import { Link } from 'umi';
 
 export default function IndexPage() {
   return (
-    <div>
+    <Container>
       <h1 className={styles.title}>Page index</h1>
-    </div>
+      <div>
+        <Link to={'/ssr'}>SSR</Link>
+      </div>
+      <div>
+        <Link to={'/404'}>404</Link>
+      </div>
+    </Container>
   );
 }

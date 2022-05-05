@@ -22,5 +22,17 @@ export default defineConfig({
       pathRewrite: { '^/api': '' },
     },
   },
+  theme: {},
   routes: [...routerConfig],
+  extraBabelPlugins: [
+    [
+      'import',
+      {
+        libraryName: '@hocgin/ui',
+        camel2DashComponentName: false,
+        style: true,
+      },
+      '@hocgin/ui',
+    ],
+  ],
 });

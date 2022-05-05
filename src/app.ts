@@ -2,6 +2,7 @@ import { isBrowser } from 'umi';
 import Config from './config';
 import moment from 'moment';
 import { RequestConfig, ErrorShowType } from 'umi';
+import { ConfigProvider } from 'antd';
 
 // moment
 if (moment) {
@@ -85,17 +86,14 @@ export const request: RequestConfig = {
     (response: Response, options: any) => {
       console.debug('[响应拦截器]::', '认证检查');
       if (response.status === 401) {
-        response
-          .clone()
-          .json()
-          .then(({ redirectUrl }: any) => {
-            if (isBrowser()) {
-              window.location.href = `${Config.getSsoServerUrl()}?redirectUrl=${
-                redirectUrl ?? window.location.href
-              }`;
-            }
-          });
-        throw new Error('认证失败');
+        response.clone().json().then(({ redirectUrl }: any) => {
+          if (isBrowser()) {
+            window.location.href = `${Config.getSsoServerUrl()}?redirectUrl=${
+              redirectUrl ?? window.location.href
+            }`;
+          }
+        });
+        // throw new Error('认证失败');
       }
       return response;
     },

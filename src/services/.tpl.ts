@@ -1,8 +1,8 @@
-import { request, usePost, Utils } from '@hocgin/ui';
+import { Utils } from '@hocgin/ui';
 import { stringify } from 'query-string';
 
+let { request, usePost } = Utils.Request;
 export default class {
-
   static getOne({ id, ...payload }: any) {
     let queryString = stringify(payload);
     return request(`/ums/user-group/${id}?${queryString}`, {
@@ -40,10 +40,14 @@ export default class {
 
   static complete(payload = {}) {
     return usePost(`/ums/user-group/_complete`, { data: { ...payload } })
-      .then(Utils.Struct.thenShowErrorIfExits).then(Utils.Struct.thenData)
-      .then((data = []) => data.map(({ typeName, encoding, id }: any) => ({
-        key: encoding, value: id,
-        description: typeName,
-      })));
+      .then(Utils.Struct.thenShowErrorIfExits)
+      .then(Utils.Struct.thenData)
+      .then((data = []) =>
+        data.map(({ typeName, encoding, id }: any) => ({
+          key: encoding,
+          value: id,
+          description: typeName,
+        })),
+      );
   }
 }

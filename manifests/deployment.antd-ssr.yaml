@@ -21,28 +21,9 @@ spec:
         - name: antd-ssr
           image: registry.cn-hongkong.aliyuncs.com/hocgin/antd-ssr:latest
           imagePullPolicy: Always
-          args: [ "--spring.profiles.active=${ACTIVE}" ]
           ports:
             - name: web-port
-              containerPort: 21001
-          envFrom:
-            - configMapRef:
-                name: cm-service-env
-          livenessProbe:
-            httpGet:
-              path: "/actuator/health"
-              port: web-port
-            initialDelaySeconds: 100
-            periodSeconds: 10
-            timeoutSeconds: 3
-            successThreshold: 1
-            failureThreshold: 5
-          readinessProbe:
-            httpGet:
-              path: "/actuator/health"
-              port: web-port
-            initialDelaySeconds: 100
-            timeoutSeconds: 3
+              containerPort: 7001
 ---
 apiVersion: v1
 kind: Service
@@ -51,8 +32,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 21001
-      targetPort: 21001
+    - port: 30001
+      targetPort: 7001
       protocol: TCP
   selector:
     app: antd-ssr

@@ -1,3 +1,5 @@
+import { Utils } from '@hocgin/ui';
+
 export default class Config {
   /**
    * 默认配置
@@ -30,11 +32,20 @@ export default class Config {
 
   static getSsoServerUrl() {
     // @ts-ignore
-    return ssoServerUrl;
+    return fullHostname(ssoServerUrl);
   }
 
   static getBaseUrl() {
     // @ts-ignore
-    return baseUrl;
+    return fullHostname(baseUrl);
   }
 }
+
+let fullHostname = (shouldUrl: string) => {
+  if (shouldUrl.startsWith('http')) {
+    return shouldUrl;
+  }
+  return `${Utils?.Dom.getWindow()?.location?.protocol}//${
+    Utils?.Dom.getWindow()?.location?.host
+  }${shouldUrl}`;
+};

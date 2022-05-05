@@ -1,4 +1,5 @@
 import { defineConfig } from 'umi';
+
 let dirs = __dirname.split('/');
 let dirName = dirs[dirs.length - 2];
 
@@ -15,4 +16,5 @@ export default defineConfig({
   hash: true,
   // cdn 地址
   publicPath: `https://cdn.hocgin.top/${dirName}/`,
+  extraBabelPlugins: ['transform-remove-console'],
 });

@@ -1,4 +1,4 @@
-import { success } from './utils/result';
+import { success } from './_utils/result';
 
 export default {
   'GET /api/worked': (req: any, res: any) => {
