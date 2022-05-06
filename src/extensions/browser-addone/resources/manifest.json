@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Weather",
+  "description": "一款天气插件，具有漂亮的动态效果。",
+  "version": "3.1.9",
+  "default_locale": "en",
+  "author": "hocgin",
+  "icons": {
+    "16": "static/LOGO_16.png",
+    "48": "static/LOGO_48.png",
+    "128": "static/LOGO_128.png"
+  },
+  "action": {
+    "default_icon": {
+      "19": "static/LOGO_48.png"
+    },
+    "default_title": "天气",
+    "default_popup": "index.html"
+  },
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["notifications"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'sha256-p3SrCu87OiMykU+zOQOkUoEDu8CyG9rV8lgCngpsEsQ=' 'self'; object-src 'self'"
+  }
+}
