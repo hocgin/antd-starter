@@ -1,24 +1,27 @@
-import { isBrowser } from 'umi';
 import Config from './config';
-import moment from 'moment';
-import { RequestConfig, ErrorShowType } from 'umi';
-import { ConfigProvider } from 'antd';
+import { RequestConfig, ErrorShowType, isBrowser, addLocale, getAllLocales, localeInfo } from 'umi';
 
-// moment
-if (moment) {
-  moment.locale('zh-cn');
+// 国际化配置
+getAllLocales().forEach(locale => {
+  let momentLocale = {
+    'zh-CN': 'zh-cn',
+    'en-US': 'en',
+  }[locale] ?? 'zh-cn';
+  let localeItem = localeInfo[locale];
+  addLocale(locale, localeItem.messages, {
+    antd: localeItem.antd,
+    momentLocale: !!localeItem.momentLocale ? localeItem.momentLocale : momentLocale,
+  });
+});
+
+// 全局状态配置
+export async function getInitialState() {
+  return {
+    author: 'hocgin',
+  };
 }
 
-export const dva = {
-  config: {
-    onError(err: any) {
-      err.preventDefault();
-      console.error(err.message);
-    },
-  },
-};
-
-// request
+// 网络请求配置
 export const request: RequestConfig = {
   timeout: 5 * 10000,
   errorConfig: {

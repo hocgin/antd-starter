@@ -29,9 +29,7 @@
     ]
   },
   "dependencies": {
-    "@ant-design/pro-layout": "^6.5.0",
-    "@hocgin/ui": "^4.1.4",
-    "ahooks": "^3.3.8",
+    "@hocgin/ui": "^4.1.10",
     "antd": "^4.17.2",
     "classnames": "^2.3.1",
     "query-string": "^7.0.1",

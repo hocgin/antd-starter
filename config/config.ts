@@ -3,6 +3,9 @@ import routerConfig from '../src/router.config';
 
 export default defineConfig({
   title: 'HOCGIN',
+  locale: {
+    antd: true,
+  },
   antd: {},
   dva: {},
   outputPath: './dist',
