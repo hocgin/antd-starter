@@ -6,7 +6,7 @@ export default [
       { path: '/', component: '@/pages/index' },
       { path: '/demo', component: '@/pages/demo' },
       { path: '/ssr', component: '@/pages/ssr' },
+      { path: '*', component: '@/pages/404' },
     ],
   },
-  { component: '@/pages/404' },
 ];
