@@ -8,6 +8,9 @@ export default defineConfig({
   },
   antd: {},
   dva: {},
+  qiankun: {
+    slave: {},
+  },
   outputPath: './dist',
   favicon: 'https://hocg.in/favicon.ico',
   nodeModulesTransform: {
