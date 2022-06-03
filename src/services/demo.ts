@@ -5,6 +5,7 @@ let { useGet } = Utils.Request;
 
 export default class {
   static ssr({ id, ...payload }: any): Promise<string> {
+
     let queryString = stringify(payload);
     return useGet(`/api/ssr?${queryString}`)
       .then(Utils.Struct.thenTryErrorIfExits)
