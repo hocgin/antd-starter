@@ -1,31 +1,74 @@
 {
   "manifest_version": 3,
-  "name": "Weather",
-  "description": "一款天气插件，具有漂亮的动态效果。",
+  "name": "插件名称",
+  "description": "插件用途简述",
   "version": "3.1.9",
-  "default_locale": "en",
   "author": "hocgin",
+  "homepage_url": "https://www.hocgin.top",
+  "omnibox": {
+    "keyword": "hocgin"
+  },
   "icons": {
-    "16": "static/LOGO_16.png",
-    "48": "static/LOGO_48.png",
-    "128": "static/LOGO_128.png"
+    "16": "static/logo.jpg",
+    "32": "static/logo.jpg",
+    "48": "static/logo.jpg",
+    "128": "static/logo.jpg"
   },
   "action": {
     "default_icon": {
-      "19": "static/LOGO_48.png"
+      "19": "static/logo.jpg"
     },
     "default_title": "天气",
-    "default_popup": "index.html"
+    "default_popup": "popup.html"
   },
   "options_page": "options.html",
   "options_ui": {
     "page": "options.html"
   },
+  "devtools_page": "devtools.html",
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "css": [
+        "content-script.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["notifications"],
-  "content_security_policy": {
-    "extension_pages": "script-src 'sha256-p3SrCu87OiMykU+zOQOkUoEDu8CyG9rV8lgCngpsEsQ=' 'self'; object-src 'self'"
-  }
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "jquery-2.1.1.min.js"
+      ],
+      "matches": [
+        "https://*/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "contextMenus",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "http://*/*",
+    "https://*/*",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
 }
