@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { Helmet } from 'umi';
+import {Helmet} from 'umi';
 
 export const Container: React.FC<{
   className?: string;
@@ -8,7 +8,7 @@ export const Container: React.FC<{
   description?: string;
   children?: any;
   keywords?: string[];
-}> = ({ title, description, keywords = [], children, className }) => {
+}> = ({title, description, keywords = [], children, className}) => {
   return <div>
     <Helmet>
       {title && <title>{title}</title>}
