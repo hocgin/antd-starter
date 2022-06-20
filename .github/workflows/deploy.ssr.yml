@@ -1,4 +1,4 @@
-name: Deploy::Auto
+name: Deploy::SSR
 
 on:
   workflow_dispatch:
@@ -112,7 +112,7 @@ jobs:
           dest_dir: ${{github.event.repository.name}}
           ignore_source_map: true
           exclude: "index.html, manifest.json, umi.server.d.ts, umi.server.js"
-          overwrite: ture
+          overwrite: true
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       # 设置 Docker 编译环境
