@@ -1,4 +1,5 @@
 import { defineConfig } from 'umi';
+import { BrowserAddoneExtensionsType } from '@hocgin/umijs-plugin-browser-addone/es/types/config';
 
 export default defineConfig({
   define: {
@@ -7,5 +8,23 @@ export default defineConfig({
   },
   extraBabelPlugins: ['transform-remove-console'],
   plugins: ['@hocgin/umijs-plugin-browser-addone'],
-  extensions: {},
+  extensions: {
+    icons: {
+      16: 'logo.jpg',
+    },
+    contentScripts: [
+      {
+        matches: ['https://baidu.com/*'],
+        entries: ['@/pages/_tpl/contentScripts/github'],
+      },
+      {
+        matches: ['https://baidu.com/*', 'https://www.baidu.com/*'],
+        entries: ['@/pages/_tpl/contentScripts/baidu'],
+        runAt: 'document_end',
+      },
+    ],
+    background: {
+      serviceWorker: '@/pages/_tpl/background/index',
+    },
+  } as BrowserAddoneExtensionsType,
 });
