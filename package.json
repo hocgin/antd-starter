@@ -30,7 +30,7 @@
     ]
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^1.0.22",
+    "@hocgin/browser-addone-kit": "^1.0.24",
     "@hocgin/ui": "^4.1.12",
     "antd": "^4.20.3",
     "classnames": "^2.3.1",
@@ -40,7 +40,7 @@
     "umi": "^3.5.20"
   },
   "devDependencies": {
-    "@hocgin/umijs-plugin-browser-addone": "^1.0.22",
+    "@hocgin/umijs-plugin-browser-addone": "^1.0.24",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@umijs/plugin-qiankun": "^2.37.2",
