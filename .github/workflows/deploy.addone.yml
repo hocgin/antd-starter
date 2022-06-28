@@ -1,0 +1,79 @@
+name: Deploy::Addone
+
+on:
+  workflow_dispatch:
+    inputs:
+      use_cache:
+        description: '是否使用 NPM 缓存'
+        required: true
+        default: 'true'
+  push:
+    tags:
+      - 'v*'
+    paths-ignore:
+      - 'docs/**'
+      - 'scripts/**'
+      - '*.md'
+      - '*.editorconfig'
+      - '*.gitignore'
+
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Actions
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Cache node modules
+        if: ${{ github.event.inputs.use_cache != 'false' }}
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install npm dependencies
+        run: npm install
+      - name: Run build
+        run: npm run build:prod.addone
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'
+
+      - name: Generate File 📃
+        run: |
+          cd dist/
+          echo $KEY_PEM > ./key.pem
+          zip -r -FS plugin.zip *
+        env:
+          KEY_PEM: ${{ secrets.KEY_PEM }}
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: ./dist/plugin.zip
+          asset_name: ${{github.event.repository.name}}.zip
+          asset_content_type: application/zip
