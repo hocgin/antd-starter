@@ -1,10 +1,10 @@
-import { success } from './_utils/result';
+import MockKit from '@hocgin/mock-kit';
 
 export default {
-  'GET /api/worked': (req: any, res: any) => {
-    return res.json(success());
-  },
+  'GET /api/worked': MockKit.success({
+    name: '@cname()',
+  }),
   'GET /api/ssr': (req: any, res: any) => {
-    return res.json(success('ssr'));
+    return res.json(MockKit.success('ssr'));
   },
 };
