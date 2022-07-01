@@ -3,8 +3,10 @@ import { BrowserAddoneExtensionsType } from '@hocgin/umijs-plugin-browser-addone
 
 export default defineConfig({
   define: {
-    baseUrl: 'https://127.0.0.1:8080/api',
-    ssoServerUrl: 'https://127.0.0.1:8080/login',
+    // api 地址
+    baseUrl: '',
+    // 单点登录地址
+    ssoServerUrl: '/login',
   },
   extraBabelPlugins: ['transform-remove-console'],
   plugins: ['@hocgin/umijs-plugin-browser-addone'],

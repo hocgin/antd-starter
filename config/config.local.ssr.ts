@@ -7,8 +7,8 @@ export default defineConfig({
   hash: true,
   define: {
     // api 地址
-    baseUrl: 'http://127.0.0.1:8000',
+    baseUrl: '',
     // 单点登录地址
-    ssoServerUrl: 'http://127.0.0.1:8000/login',
+    ssoServerUrl: '/login',
   },
 });
