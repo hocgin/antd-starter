@@ -166,7 +166,7 @@ jobs:
         with:
           namespace: ${{ steps.prep.outputs.env }}
           manifests: |
-            manifests/deployment.antd-ssr.yaml
+            manifests/deployment.antd-ssr.yml
           images: |
             ${{ env.IMAGE_NAME }}:${{ steps.prep.outputs.version }}
           imagepullsecrets: |
