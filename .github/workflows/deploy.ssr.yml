@@ -91,16 +91,14 @@ jobs:
         env:
           cache-name: cache-node-modules
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - name: Install npm dependencies
-        run: npm install
+            ${{ runner.os }}-yarn-
+      - name: Install yarn dependencies
+        run: yarn
       - name: Run build
-        run: npm run build:prod.ssr
+        run: yarn build:prod.ssr
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
       - uses: hocgin/action-qiniu-upload@master

@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       use_cache:
-        description: '是否使用 NPM 缓存'
+        description: '是否使用缓存'
         required: true
         default: 'true'
-  push:
-    tags:
-      - 'v*'
+#  push:
+#    tags:
+#      - 'v*'
     paths-ignore:
       - 'docs/**'
       - 'scripts/**'
@@ -34,16 +34,14 @@ jobs:
         env:
           cache-name: cache-node-modules
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-      - name: Install npm dependencies
-        run: npm install
+            ${{ runner.os }}-yarn-
+      - name: Install yarn dependencies
+        run: yarn
       - name: Run build
-        run: npm run build:prod.cdn
+        run: yarn build:prod.cdn
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
       - name: Deploy to Server
