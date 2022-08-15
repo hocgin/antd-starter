@@ -5,3 +5,23 @@
     @rules();
   }
 }
+
+// 夜间模式
+.dark(@rules) {
+  [data-theme='dark'] & {
+    @rules();
+  }
+  [data-theme='auto'] & {
+    @media (prefers-color-scheme: dark) {
+      @rules();
+    }
+  }
+}
+
+// 隐藏滚动条
+.hideScrollbar {
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
