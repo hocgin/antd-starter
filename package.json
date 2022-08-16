@@ -31,9 +31,9 @@
     ]
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^1.0.31",
-    "@hocgin/mock-kit": "^1.0.31",
-    "@hocgin/ui": "^4.1.24",
+    "@hocgin/browser-addone-kit": "^1.0.33",
+    "@hocgin/mock-kit": "^1.0.33",
+    "@hocgin/ui": "^4.1.25",
     "antd": "^4.20.3",
     "classnames": "^2.3.1",
     "mockjs": "^1.1.0",
@@ -43,7 +43,7 @@
     "umi": "^3.5.20"
   },
   "devDependencies": {
-    "@hocgin/umijs-plugin-browser-addone": "^1.0.31",
+    "@hocgin/umijs-plugin-browser-addone": "^1.0.33",
     "@types/mockjs": "^1.0.6",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
