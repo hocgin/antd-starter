@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "umi dev",
+    "analyze": "cross-env ANALYZE=1 umi dev",
     "start:nomock": "cross-env MOCK=none umi dev",
     "start:prod.addone": "cross-env UMI_ENV=prod.addone umi dev",
     "build": "cross-env UMI_ENV=prod umi build",
