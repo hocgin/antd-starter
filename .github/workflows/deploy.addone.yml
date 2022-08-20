@@ -25,6 +25,18 @@ jobs:
     steps:
       - name: Checkout Actions
         uses: actions/checkout@v2
+      - name: Get version from Tags
+        id: prep
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION=$(echo "${VERSION}" | sed 's/v//')
+          echo ::set-output name=version::${VERSION}
+      - name: Rename Version
+        run: |
+          version=$VERSION
+          version='v'`cat package.json | awk 'NR==3' | awk '{print $2}' | sed 's/\"//g;s/,//'`
+        env:
+          VERSION: ${{ steps.prep.outputs.version }}
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
