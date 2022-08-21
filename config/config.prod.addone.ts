@@ -1,5 +1,5 @@
-import { defineConfig } from 'umi';
-import { BrowserAddoneExtensionsType } from '@hocgin/umijs-plugin-browser-addone';
+import {defineConfig} from 'umi';
+import {BrowserAddoneExtensionsType} from '@hocgin/umijs-plugin-browser-addone';
 
 export default defineConfig({
   define: {
