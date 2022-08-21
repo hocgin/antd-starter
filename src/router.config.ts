@@ -7,7 +7,7 @@ export default [
       {path: '/tpl', component: '@/pages/_tpl'},
       {path: '/tpl/demo', component: '@/pages/_tpl/demo'},
       {path: '/tpl/ssr', component: '@/pages/_tpl/ssr'},
-      {path: '*', component: '@/pages/404'},
     ],
   },
+  {component: '@/pages/404'}
 ];
