@@ -1,16 +1,26 @@
 import Config from './config';
-import { RequestConfig, ErrorShowType, isBrowser, addLocale, getAllLocales, localeInfo } from 'umi';
+import {
+  RequestConfig,
+  ErrorShowType,
+  isBrowser,
+  addLocale,
+  getAllLocales,
+  localeInfo,
+} from 'umi';
 
 // 国际化配置
-getAllLocales().forEach(locale => {
-  let momentLocale = {
-    'zh-CN': 'zh-cn',
-    'en-US': 'en',
-  }[locale] ?? 'zh-cn';
+getAllLocales().forEach((locale) => {
+  let momentLocale =
+    {
+      'zh-CN': 'zh-cn',
+      'en-US': 'en',
+    }[locale] ?? 'zh-cn';
   let localeItem = localeInfo[locale];
   addLocale(locale, localeItem.messages, {
     antd: localeItem.antd,
-    momentLocale: !!localeItem.momentLocale ? localeItem.momentLocale : momentLocale,
+    momentLocale: !!localeItem.momentLocale
+      ? localeItem.momentLocale
+      : momentLocale,
   });
 });
 
@@ -54,7 +64,7 @@ export const request: RequestConfig = {
   requestInterceptors: [
     // 默认请求头
     (url: string, options: any) => {
-      url = `${Config.getBaseUrl()}${url}`;
+      url = `${url}`.startsWith('http') ? url : `${Config.getBaseUrl()}${url}`;
       console.debug('[请求拦截器]::', '附带请求头');
       const defaultOptions = {
         credentials: 'include',
@@ -89,13 +99,16 @@ export const request: RequestConfig = {
     (response: Response, options: any) => {
       console.debug('[响应拦截器]::', '认证检查');
       if (response.status === 401) {
-        response.clone().json().then(({ redirectUrl }: any) => {
-          if (isBrowser()) {
-            window.location.href = `${Config.getSsoServerUrl()}?redirectUrl=${
-              redirectUrl ?? window.location.href
-            }`;
-          }
-        });
+        response
+          .clone()
+          .json()
+          .then(({ redirectUrl }: any) => {
+            if (isBrowser()) {
+              window.location.href = `${Config.getSsoServerUrl()}?redirectUrl=${
+                redirectUrl ?? window.location.href
+              }`;
+            }
+          });
         // throw new Error('认证失败');
       }
       return response;
