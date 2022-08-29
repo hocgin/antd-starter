@@ -31,10 +31,10 @@ jobs:
           VERSION=${GITHUB_REF#refs/tags/}
           VERSION=$(echo "${VERSION}" | sed 's/v//')
           echo ::set-output name=version::${VERSION}
+
       - name: Rename Version
         run: |
-          version=$VERSION
-          version='v'`cat package.json | awk 'NR==3' | awk '{print $2}' | sed 's/\"//g;s/,//'`
+          sed -i "s/\"1.0.0\"/\"${VERSION}\"/" package.json
         env:
           VERSION: ${{ steps.prep.outputs.version }}
       - name: Install Node.js
