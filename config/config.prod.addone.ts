@@ -1,5 +1,5 @@
-import { defineConfig } from 'umi';
-import { BrowserAddoneExtensionsType } from '@hocgin/umijs-plugin-browser-addone';
+import {defineConfig} from 'umi';
+import {BrowserAddoneExtensionsType} from '@hocgin/umijs-plugin-browser-addone';
 
 export default defineConfig({
   define: {
@@ -11,9 +11,7 @@ export default defineConfig({
   extraBabelPlugins: ['transform-remove-console'],
   plugins: ['@hocgin/umijs-plugin-browser-addone'],
   extensions: {
-    icons: {
-      16: 'logo.jpg',
-    },
+    icons: '../public/logo.jpg',
     contentScripts: [
       {
         matches: ['https://baidu.com/*'],
@@ -28,5 +26,12 @@ export default defineConfig({
     background: {
       serviceWorker: '@/pages/_tpl/background/index',
     },
+    permissions: [
+      'contextMenus',
+      'webRequest',
+      'storage',
+      'notifications',
+    ],
+    hostPermissions: ['<all_urls>'],
   } as BrowserAddoneExtensionsType,
 });

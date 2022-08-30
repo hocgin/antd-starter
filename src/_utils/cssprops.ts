@@ -1,13 +1,13 @@
-export default class CssProps {
-  static setBackgroundColor(value: string = "unset") {
-    CssProps.setProperty('--background-color', value);
-  }
+import { CssPropsKit } from '@hocgin/hkit';
 
-  static setProperty(property: string, value?: string) {
-    if (value === undefined) {
-      return;
-    }
-    let root = document.documentElement;
-    root.style.setProperty(property, value);
+export enum CssPropsKey {
+
+}
+
+export let cssPropsKit = CssPropsKit.create<CssPropsKey | any, string>();
+
+export default class CssProps {
+  static setBackgroundColor(value: string = 'unset') {
+    cssPropsKit.set('--background-color', value);
   }
 }
