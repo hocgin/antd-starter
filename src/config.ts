@@ -1,5 +1,3 @@
-import { Utils } from '@hocgin/ui';
-
 export default class Config {
   /**
    * 默认配置
@@ -45,7 +43,5 @@ let fullHostname = (shouldUrl: string) => {
   if (shouldUrl.startsWith('http')) {
     return shouldUrl;
   }
-  return `${Utils?.Dom.getWindow()?.location?.protocol}//${
-    Utils?.Dom.getWindow()?.location?.host
-  }${shouldUrl}`;
+  return `${shouldUrl}`;
 };
