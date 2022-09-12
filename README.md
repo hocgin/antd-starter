@@ -1,6 +1,13 @@
 # antd starter
 > 快速构建，支持 SSR / 浏览器插件 / 纯静态 / qiankun 等多种部署开发方式。
 
+## 功能支持
+- SSR 支持
+- 浏览器插件开发(v3)支持
+- 纯静态部署支持
+- CDN 部署支持
+- 微前端方案(qiankun)支持
+
 ## 快速开始
 
 Install dependencies, 
