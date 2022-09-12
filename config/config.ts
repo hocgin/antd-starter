@@ -14,7 +14,7 @@ export default defineConfig({
     },
   },
   outputPath: './dist',
-  favicon: 'https://hocg.in/favicon.ico',
+  favicon: 'https://cdn.hocgin.top/uPic/favicon.ico',
   nodeModulesTransform: {
     type: 'none',
   },
