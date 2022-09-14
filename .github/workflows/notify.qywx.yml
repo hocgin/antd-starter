@@ -1,64 +1,30 @@
 name: Watch Workflow Status
 on:
   workflow_run:
-    workflows: [ "Deploy::CDN", "Deploy::SSR", "Deploy::Static", "Deploy::Addone" ]
+    workflows: [ "Created", "Deploy::CDN", "Deploy::SSR", "Deploy::Static", "Deploy::Addone" ]
     types: [ completed ]
 env:
   WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
-  MORE_URL: 'https://www.hocgin.top'
 
 jobs:
-  on-success:
+  notify:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - name: WeChat Work Prepare
-        id: wx_prep
-        run: |
-          echo ::set-output name=wx_created::$(TZ=Asia/Shanghai date -d @`date +%s` "+%Y-%m-%d %H:%M:%S")
-          GITHUB_REF=${{github.base_ref}}
-          echo ::set-output name=wx_base_ref::$(echo ${GITHUB_REF#refs/heads/})
-          GITHUB_REF=${{github.event.ref}}
-          echo ::set-output name=wx_target_ref::$(echo ${GITHUB_REF#refs/heads/})
+      - id: prep
+        uses: hocgin/action-env@main
       - name: WeChat Work Notification
         uses: chf007/action-wechat-work@master
         env:
           WECHAT_WORK_BOT_WEBHOOK: ${{env.WECHAT_WORK_BOT_WEBHOOK}}
         with:
           msgtype: markdown
-          content: "☀️**【[${{ github.repository }}](https://github.com/${{ github.repository }})】** \n
+          content: "**【[${{ steps.prep.outputs.repo_full_name }}](${{ steps.prep.outputs.repo_html_url }})】** \n
+          📌 ${{ github.event.workflow_run.conclusion == 'success' && '☀️☀️☀️☀️☀️' || '🌧️🌧️🌧️🌧️🌧️' }} \n
+          🏃 [@${{ steps.prep.outputs.sender }}](${{ steps.prep.outputs.sender_html_url }})\n
+          🕐 <font color=\"comment\">${{ steps.prep.outputs.action_trigger_at }}</font> \n
+          🔧 <font color=\"warning\">${{ steps.prep.outputs.source_branch || '∅' }} -> ${{ steps.prep.outputs.target_branch || '∅' }}</font> \n
+          🏆 <font color=\"comment\">${{ steps.prep.outputs.env || '未知版本' }} / ${{ steps.prep.outputs.version || '未知版本' }}</font> \n
+          📝 [提交信息](${{ steps.prep.outputs.commit_html_url }}) \n
           \n
-          🏃 [@${{ github.actor }}](https://github.com/${{ github.actor }})\n
-          🕐 <font color=\"comment\">${{ steps.wx_prep.outputs.wx_created }}</font> \n
-          🔧 <font color=\"warning\">${{ steps.wx_prep.outputs.wx_base_ref || '∅' }} -> ${{ steps.wx_prep.outputs.wx_target_ref }}</font> \n
-          📝 <font color=\"comment\"> ${{ github.event.head_commit.message }}</font> \n
-          \n
-          [查看详情](${{ env.MORE_URL }})
-          "
-  on-failure:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-    steps:
-      - name: WeChat Work Prepare
-        id: wx_prep
-        run: |
-          echo ::set-output name=wx_created::$(TZ=Asia/Shanghai date -d @`date +%s` "+%Y-%m-%d %H:%M:%S")
-          GITHUB_REF=${{github.base_ref}}
-          echo ::set-output name=wx_base_ref::$(echo ${GITHUB_REF#refs/heads/})
-          GITHUB_REF=${{github.event.ref}}
-          echo ::set-output name=wx_target_ref::$(echo ${GITHUB_REF#refs/heads/})
-      - name: WeChat Work Notification
-        uses: chf007/action-wechat-work@master
-        env:
-          WECHAT_WORK_BOT_WEBHOOK: ${{env.WECHAT_WORK_BOT_WEBHOOK}}
-        with:
-          msgtype: markdown
-          content: "🌧️**【[${{ github.repository }}](https://github.com/${{ github.repository }})】** \n
-          \n
-          🏃 [@${{ github.actor }}](https://github.com/${{ github.actor }})\n
-          🕐 <font color=\"comment\">${{ steps.wx_prep.outputs.wx_created }}</font> \n
-          🔧 <font color=\"warning\">${{ steps.wx_prep.outputs.wx_base_ref || '∅' }} -> ${{ steps.wx_prep.outputs.wx_target_ref }}</font> \n
-          📝 <font color=\"comment\"> ${{ github.event.head_commit.message }}</font> \n
-          \n
-          [查看详情](${{ env.MORE_URL }})
+          [查看更多](${{ steps.prep.outputs.repo_homepage || steps.prep.outputs.repo_html_url }})
           "
