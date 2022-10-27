@@ -16,7 +16,11 @@ on:
       - '*.md'
       - '*.editorconfig'
       - '*.gitignore'
-
+env:
+  REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+  REMOTE_USER: ${{ secrets.REMOTE_USER }}
+  SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+  REMOTE_TARGET: ${{ secrets.REMOTE_TARGET }}
 
 jobs:
   build-deploy:
@@ -52,9 +56,9 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           ARGS: "-rltgoDzvO --delete"
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          TARGET: ${{ secrets.REMOTE_TARGET }}
+          REMOTE_HOST: ${{ env.REMOTE_HOST }}
+          REMOTE_USER: ${{ env.REMOTE_USER }}
+          SSH_PRIVATE_KEY: ${{ env.SERVER_SSH_KEY }}
+          TARGET: ${{ env.REMOTE_TARGET }}
           SOURCE: "dist/"
           EXCLUDE: "/dist/, /node_modules/"

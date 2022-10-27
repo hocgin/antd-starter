@@ -10,6 +10,9 @@ env:
   IMAGES_HUB_PASSWORD: ${{ secrets.IMAGES_HUB_PASSWORD }}
   IMAGES_HUB_EMAIL: hocgin@gmail.com
   KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+  QINIU_ACCESS_KEY: ${{ secrets.QINIU_ACCESS_KEY }}
+  QINIU_SECRET_KEY: ${{ secrets.QINIU_SECRET_KEY }}
+  QINIU_BUCKET: ${{ secrets.QINIU_BUCKET }}
 
 jobs:
   build-publish-deploy:
@@ -106,9 +109,9 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
       - uses: hocgin/action-qiniu-upload@master
         with:
-          access_key: ${{ secrets.QINIU_ACCESS_KEY }}
-          secret_key: ${{ secrets.QINIU_SECRET_KEY }}
-          bucket: ${{ secrets.QINIU_BUCKET }}
+          access_key: ${{ env.QINIU_ACCESS_KEY }}
+          secret_key: ${{ env.QINIU_SECRET_KEY }}
+          bucket: ${{ env.QINIU_BUCKET }}
           source_dir: 'dist'
           dest_dir: ${{github.event.repository.name}}
           ignore_source_map: true
