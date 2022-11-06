@@ -1,7 +1,5 @@
-import Config from './config';
-import {defaultRequestOptions} from '@hocgin/hkit';
-import {message} from "antd";
-import {addLocale, getAllLocales, localeInfo,} from 'umi';
+import { addLocale, getAllLocales, localeInfo } from 'umi';
+import '@/request.config';
 
 // 国际化配置
 getAllLocales().forEach((locale) => {
@@ -25,17 +23,3 @@ export async function getInitialState() {
     author: 'hocgin',
   };
 }
-
-// 网络请求配置
-defaultRequestOptions({
-  baseUrl: Config.getBaseUrl(),
-  ssoServerUrl: Config.getSsoServerUrl(),
-  addHeaders: async () => {
-    let headers: any = {};
-    if (Config.isDev()) {
-      headers['X-Username'] = "hocgin";
-    }
-    return headers;
-  },
-  errorHandler: (error: any) => message.error(error.message),
-});
