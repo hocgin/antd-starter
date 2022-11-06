@@ -777,10 +777,10 @@
   resolved "https://registry.npmmirror.com/@formatjs/intl-utils/-/intl-utils-2.3.0.tgz#2dc8c57044de0340eb53a7ba602e59abf80dc799"
   integrity sha512-KWk80UPIzPmUg+P0rKh6TqspRw0G6eux1PuJr+zz47ftMaZ9QDwbGzHZbtzWkl5hgayM/qrKRutllRC7D/vVXQ==
 
-"@hocgin/browser-addone-kit@^1.0.83":
-  version "1.0.83"
-  resolved "https://registry.npmjs.org/@hocgin/browser-addone-kit/-/browser-addone-kit-1.0.83.tgz#cd2a161c58975701c900858aa5d848144150cdc1"
-  integrity sha512-mNHCx/V4mDbVya2XKG1p+JCpitkCM+b3ysolaV+G0Nw9bPCxWMQjSp9RWGAa6kl5wk7robUzN07PIXpDQujC4A==
+"@hocgin/browser-addone-kit@^1.0.85":
+  version "1.0.85"
+  resolved "https://registry.npmjs.org/@hocgin/browser-addone-kit/-/browser-addone-kit-1.0.85.tgz#aea3030f137595d32f846f51ad77ef25900d8516"
+  integrity sha512-dan0WZZmaTRxE64p80cu+m+/QPaWGWL+zRW542wT0YqfbX54b6jkvrazmI7/O6hTxBEwVbsKiVRrhzd+67KBaw==
   dependencies:
     "@types/chrome" "0.0.195"
     querystring "^0.2.1"
@@ -793,10 +793,18 @@
     memoize-one "^6.0.0"
     umi-request "^1.4.0"
 
-"@hocgin/mock-kit@^1.0.83":
-  version "1.0.83"
-  resolved "https://registry.npmjs.org/@hocgin/mock-kit/-/mock-kit-1.0.83.tgz#85eb26d721e72e48694be2e5ab7f2a4b80a43a08"
-  integrity sha512-TmSbka/IhEDp9dmZhhj+5XqDoEb3Ib3mIYH3i8vMZvtdWeTt2GMJ7zobzvZhqesjkioRctJNh2X82wpWc5FG1g==
+"@hocgin/hkit@^1.0.85":
+  version "1.0.85"
+  resolved "https://registry.npmjs.org/@hocgin/hkit/-/hkit-1.0.85.tgz#b0d31c0b9d8edbdabf4e9729a5d3969a4ddd0fa2"
+  integrity sha512-i1S7oMv4qcKDOlmpfuRSXjwBfG++cB2kkSbijtF+F0wXe78asqfqG5BnnlDUa2Rk524Cnn7b26UJx/3RWSTTlQ==
+  dependencies:
+    memoize-one "^6.0.0"
+    umi-request "^1.4.0"
+
+"@hocgin/mock-kit@^1.0.85":
+  version "1.0.85"
+  resolved "https://registry.npmjs.org/@hocgin/mock-kit/-/mock-kit-1.0.85.tgz#92b2578a0dc2689186fa7ca0d89dcf0566861966"
+  integrity sha512-H1cMCGk9f21/xoQm/+CiDV/iOB/ul9w5nvH9cvYpF1kTdXYqRIs6s7PlS8kdTsM7X4yyDA+Fjyyq2z54AGtPUA==
   dependencies:
     mockjs "^1.1.0"
 
@@ -864,10 +872,10 @@
     draft-js-prism "^1.0.6"
     emoji-mart "^3.0.1"
 
-"@hocgin/umijs-plugin-browser-addone@^1.0.83":
-  version "1.0.83"
-  resolved "https://registry.npmjs.org/@hocgin/umijs-plugin-browser-addone/-/umijs-plugin-browser-addone-1.0.83.tgz#05c13e04a9bc25fb8f719d370d2093427a11e863"
-  integrity sha512-SaqmMrkFj2n/t+vYu/C7p7Xcuq2LxAqgiNsQ0GM0XjJ80XCv4aQJ6yaY5Kekn1orv+XQIpguHF3jLuyia0OtPQ==
+"@hocgin/umijs-plugin-browser-addone@^1.0.85":
+  version "1.0.85"
+  resolved "https://registry.npmjs.org/@hocgin/umijs-plugin-browser-addone/-/umijs-plugin-browser-addone-1.0.85.tgz#41be79d327447b664cf563a9dcc43cea2cc274a2"
+  integrity sha512-W0VSJU9y/b24kZAzKwJE29Vc78WakdB0k34tkyF6xi2UtSP01DL07WyuvR97QgdgeBj5GpHYiuWaXSMoOW6WyA==
   dependencies:
     fs-extra "^9.0.1"
     generate-json-webpack-plugin "^1.0.0"

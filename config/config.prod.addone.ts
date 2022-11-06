@@ -1,5 +1,6 @@
-import {defineConfig} from 'umi';
-import {BrowserAddoneExtensionsType} from '@hocgin/umijs-plugin-browser-addone';
+import { defineConfig } from 'umi';
+import { WebExtension } from '@hocgin/browser-addone-kit';
+import { BrowserAddoneExtensionsType } from '@hocgin/umijs-plugin-browser-addone';
 
 export default defineConfig({
   define: {
@@ -13,25 +14,24 @@ export default defineConfig({
   extensions: {
     icons: '../public/logo.jpg',
     contentScripts: [
+      WebExtension.kit.tbkScriptConfig(['@/pages/_tpl/contentscripts/tbk']),
+      WebExtension.kit.authorizationScriptConfig([
+        '@/pages/_tpl/contentscripts/authorization',
+      ]),
       {
         matches: ['https://baidu.com/*'],
-        entries: ['@/pages/_tpl/contentScripts/github'],
+        entries: ['@/pages/_tpl/contentscripts/github'],
       },
       {
         matches: ['https://baidu.com/*', 'https://www.baidu.com/*'],
-        entries: ['@/pages/_tpl/contentScripts/baidu'],
+        entries: ['@/pages/_tpl/contentscripts/baidu'],
         runAt: 'document_end',
       },
     ],
     background: {
       serviceWorker: '@/pages/_tpl/background/index',
     },
-    permissions: [
-      'contextMenus',
-      'webRequest',
-      'storage',
-      'notifications',
-    ],
+    permissions: ['contextMenus', 'webRequest', 'storage', 'notifications'],
     hostPermissions: ['<all_urls>'],
   } as BrowserAddoneExtensionsType,
 });
