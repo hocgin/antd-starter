@@ -27,6 +27,11 @@ const Index: React.FC<{
   console.log('->', moment.version, moment.locale());
   console.log('->', getAllLocales(), localeInfo);
   console.log('00', intl.formatRelativeTime(1, 'day'));
+  console.debug('console.debug');
+  console.log('console.log');
+  console.info('console.info');
+  console.warn('console.warn');
+  console.error('console.error');
 
   return (
     <Container>

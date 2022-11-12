@@ -9,7 +9,6 @@ export default defineConfig({
     // 单点登录地址
     ssoServerUrl: '/login',
   },
-  extraBabelPlugins: ['transform-remove-console'],
   plugins: ['@hocgin/umijs-plugin-browser-addone'],
   extensions: {
     icons: '../public/logo.jpg',

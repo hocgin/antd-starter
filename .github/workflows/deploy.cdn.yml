@@ -55,6 +55,7 @@ jobs:
         run: yarn build:prod.cdn
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
+          USE_LOG: false
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:

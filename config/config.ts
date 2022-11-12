@@ -1,6 +1,19 @@
 import { defineConfig } from 'umi';
 import routerConfig from '../src/router.config';
 
+export const useLogger = () => {
+  let result: any = [];
+  let offLogger = process.env.USE_LOG !== 'true';
+  console.debug(`[${offLogger ? '禁用' : '启用'}]日志打印`);
+  if (offLogger) {
+    result.push([
+      'transform-remove-console',
+      { exclude: ['error', 'warn', 'info'] },
+    ]);
+  }
+  return result;
+};
+
 export default defineConfig({
   title: 'HOCGIN',
   locale: {
@@ -42,5 +55,6 @@ export default defineConfig({
       },
       '@hocgin/ui',
     ],
+    ...useLogger(),
   ],
 });
