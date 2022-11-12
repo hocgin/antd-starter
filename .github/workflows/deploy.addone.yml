@@ -39,17 +39,13 @@ jobs:
     steps:
       - name: Checkout Actions
         uses: actions/checkout@v2
-      - name: Get version from Tags
-        id: prep
-        run: |
-          VERSION=${GITHUB_REF#refs/tags/}
-          VERSION=$(echo "${VERSION}" | sed 's/v//')
-          echo ::set-output name=version::${VERSION}
+      - id: prep
+        uses: hocgin/action-env@main
       - name: Rename Version
         run: |
           sed -i "s/\"1.0.0\"/\"${VERSION}\"/" package.json
         env:
-          VERSION: ${{ steps.prep.outputs.version }}
+          VERSION: ${{ steps.prep.outputs.version_number }}
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
