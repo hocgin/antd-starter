@@ -1,5 +1,10 @@
 import { addLocale, getAllLocales, localeInfo } from 'umi';
 import '@/request.config';
+import { ConfigProvider } from 'antd';
+
+ConfigProvider.config({
+  prefixCls: 'hi-ant',
+});
 
 // 国际化配置
 getAllLocales().forEach((locale) => {

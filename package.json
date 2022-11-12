@@ -32,9 +32,9 @@
     ]
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^1.0.85",
-    "@hocgin/mock-kit": "^1.0.85",
-    "@hocgin/hkit": "^1.0.85",
+    "@hocgin/browser-addone-kit": "^1.0.86",
+    "@hocgin/mock-kit": "^1.0.86",
+    "@hocgin/hkit": "^1.0.86",
     "@hocgin/ui": "^4.2.8",
     "antd": "4.22.5",
     "classnames": "^2.3.1",
@@ -43,8 +43,11 @@
     "react": "17.x",
     "react-dom": "17.x"
   },
+  "resolutions": {
+    "@types/react": "17.0.44"
+  },
   "devDependencies": {
-    "@hocgin/umijs-plugin-browser-addone": "^1.0.85",
+    "@hocgin/umijs-plugin-browser-addone": "^1.0.86",
     "@types/mockjs": "^1.0.6",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",

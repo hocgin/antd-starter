@@ -777,10 +777,10 @@
   resolved "https://registry.npmmirror.com/@formatjs/intl-utils/-/intl-utils-2.3.0.tgz#2dc8c57044de0340eb53a7ba602e59abf80dc799"
   integrity sha512-KWk80UPIzPmUg+P0rKh6TqspRw0G6eux1PuJr+zz47ftMaZ9QDwbGzHZbtzWkl5hgayM/qrKRutllRC7D/vVXQ==
 
-"@hocgin/browser-addone-kit@^1.0.85":
-  version "1.0.85"
-  resolved "https://registry.npmjs.org/@hocgin/browser-addone-kit/-/browser-addone-kit-1.0.85.tgz#aea3030f137595d32f846f51ad77ef25900d8516"
-  integrity sha512-dan0WZZmaTRxE64p80cu+m+/QPaWGWL+zRW542wT0YqfbX54b6jkvrazmI7/O6hTxBEwVbsKiVRrhzd+67KBaw==
+"@hocgin/browser-addone-kit@^1.0.86":
+  version "1.0.86"
+  resolved "https://registry.npmjs.org/@hocgin/browser-addone-kit/-/browser-addone-kit-1.0.86.tgz#43537aac7eb2f37636ad8af4476f47ffde76db59"
+  integrity sha512-+hrSO4WWFYueWikIPeaRyyZYWgxOgYdKXSPrPN+90qYW1IvZGhmnS664V6m29Xqec2KQSGx3fSTpEaISuEc1yw==
   dependencies:
     "@types/chrome" "0.0.195"
     querystring "^0.2.1"
@@ -793,18 +793,18 @@
     memoize-one "^6.0.0"
     umi-request "^1.4.0"
 
-"@hocgin/hkit@^1.0.85":
-  version "1.0.85"
-  resolved "https://registry.npmjs.org/@hocgin/hkit/-/hkit-1.0.85.tgz#b0d31c0b9d8edbdabf4e9729a5d3969a4ddd0fa2"
-  integrity sha512-i1S7oMv4qcKDOlmpfuRSXjwBfG++cB2kkSbijtF+F0wXe78asqfqG5BnnlDUa2Rk524Cnn7b26UJx/3RWSTTlQ==
+"@hocgin/hkit@^1.0.86":
+  version "1.0.86"
+  resolved "https://registry.npmjs.org/@hocgin/hkit/-/hkit-1.0.86.tgz#0111a037dff90ac7534b703eafc7153a00c98019"
+  integrity sha512-Mm4uHylVsaDoOWvOdLeHkvihg37vqydQldH2r8JSmRDxknQJ5K6LXRra0AhgpK1S855hUM5hEViA0GstS2YjXg==
   dependencies:
     memoize-one "^6.0.0"
     umi-request "^1.4.0"
 
-"@hocgin/mock-kit@^1.0.85":
-  version "1.0.85"
-  resolved "https://registry.npmjs.org/@hocgin/mock-kit/-/mock-kit-1.0.85.tgz#92b2578a0dc2689186fa7ca0d89dcf0566861966"
-  integrity sha512-H1cMCGk9f21/xoQm/+CiDV/iOB/ul9w5nvH9cvYpF1kTdXYqRIs6s7PlS8kdTsM7X4yyDA+Fjyyq2z54AGtPUA==
+"@hocgin/mock-kit@^1.0.86":
+  version "1.0.86"
+  resolved "https://registry.npmjs.org/@hocgin/mock-kit/-/mock-kit-1.0.86.tgz#b31f44247c6428b122d474a29dcc50a2fdb8e7a1"
+  integrity sha512-syaxtfJQE9l7Vb2uGRXRTslG9wNCx2uYcmOpZKTpU6CVYeVwXvvXElzAAov+k31xu4pwDXwWkZ8ZnS6GA25GLQ==
   dependencies:
     mockjs "^1.1.0"
 
@@ -872,10 +872,10 @@
     draft-js-prism "^1.0.6"
     emoji-mart "^3.0.1"
 
-"@hocgin/umijs-plugin-browser-addone@^1.0.85":
-  version "1.0.85"
-  resolved "https://registry.npmjs.org/@hocgin/umijs-plugin-browser-addone/-/umijs-plugin-browser-addone-1.0.85.tgz#41be79d327447b664cf563a9dcc43cea2cc274a2"
-  integrity sha512-W0VSJU9y/b24kZAzKwJE29Vc78WakdB0k34tkyF6xi2UtSP01DL07WyuvR97QgdgeBj5GpHYiuWaXSMoOW6WyA==
+"@hocgin/umijs-plugin-browser-addone@^1.0.86":
+  version "1.0.86"
+  resolved "https://registry.npmjs.org/@hocgin/umijs-plugin-browser-addone/-/umijs-plugin-browser-addone-1.0.86.tgz#683042e4174068c1ffe6dcfc2c5d46f5b4cce251"
+  integrity sha512-mqkxcSsRSKLLLP5T6MZXtGKB+qrq6PAWPCuw4Yz1g4bl/NZ5AFXPxn5kE+WyNaK5F/gQrP8gIB6y25/uWRQmYQ==
   dependencies:
     fs-extra "^9.0.1"
     generate-json-webpack-plugin "^1.0.0"
@@ -1870,28 +1870,19 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*":
-  version "18.0.8"
-  resolved "https://registry.npmmirror.com/@types/react/-/react-18.0.8.tgz#a051eb380a9fbcaa404550543c58e1cf5ce4ab87"
-  integrity sha512-+j2hk9BzCOrrOSJASi5XiOyBbERk9jG5O73Ya4M0env5Ixi6vUNli4qy994AINcEF+1IEHISYFfIT4zwr++LKw==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@^16", "@types/react@^16.9.43":
-  version "16.14.25"
-  resolved "https://registry.npmmirror.com/@types/react/-/react-16.14.25.tgz#d003f712c7563fdef5a87327f1892825af375608"
-  integrity sha512-cXRVHd7vBT5v1is72mmvmsg9stZrbJO04DJqFeh3Yj2tVKO6vmxg5BI+ybI6Ls7ROXRG3aFbZj9x0WA3ZAoDQw==
-  dependencies:
-    "@types/prop-types" "*"
-    "@types/scheduler" "*"
-    csstype "^3.0.2"
-
-"@types/react@^17", "@types/react@^17.0.0":
+"@types/react@*", "@types/react@17.0.44", "@types/react@^16", "@types/react@^16.9.43", "@types/react@^17":
   version "17.0.44"
-  resolved "https://registry.npmmirror.com/@types/react/-/react-17.0.44.tgz#c3714bd34dd551ab20b8015d9d0dbec812a51ec7"
+  resolved "https://registry.npmjs.org/@types/react/-/react-17.0.44.tgz#c3714bd34dd551ab20b8015d9d0dbec812a51ec7"
   integrity sha512-Ye0nlw09GeMp2Suh8qoOv0odfgCoowfM/9MG6WeRD60Gq9wS90bdkdRtYbRkNhXOpG4H+YXGvj4wOWhAC0LJ1g==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.0":
+  version "17.0.52"
+  resolved "https://registry.npmjs.org/@types/react/-/react-17.0.52.tgz#10d8b907b5c563ac014a541f289ae8eaa9bf2e9b"
+  integrity sha512-vwk8QqVODi0VaZZpDXQCmEmiOuyjEFPY7Ttaw5vjM112LOq37yz1CDJGrRJwA1fYEq4Iitd5rnjd1yWAc/bT+A==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
