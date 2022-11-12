@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Actions
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - id: prep
         uses: hocgin/action-env@main
       - name: Rename Version
@@ -47,7 +47,7 @@ jobs:
         env:
           VERSION: ${{ steps.prep.outputs.version_number }}
       - name: Install Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '14.x'
       - name: Get yarn cache directory path
@@ -55,7 +55,7 @@ jobs:
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Cache node modules
         if: ${{ github.event.inputs.use_cache != 'false' }}
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
@@ -65,8 +65,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install yarn dependencies
         run: yarn
-#      - name: yarn patchpackage
-#        run: yarn patchpackage
+      #      - name: yarn patchpackage
+      #        run: yarn patchpackage
       - name: Run build
         run: yarn build:prod.addone
         env:
