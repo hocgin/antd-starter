@@ -10,6 +10,7 @@ export default defineConfig({
     // 单点登录地址
     ssoServerUrl: '/login',
   },
+  // https://v3.umijs.org/config#ssr
   ssr: {
     devServerRender: true,
   },
