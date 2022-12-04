@@ -17,10 +17,3 @@ getAllLocales().forEach((locale) => {
   //     : momentLocale,
   // });
 });
-
-// 全局状态配置
-export async function getInitialState() {
-  return {
-    author: 'hocgin',
-  };
-}

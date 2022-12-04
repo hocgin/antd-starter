@@ -5,9 +5,9 @@
   "scripts": {
     "start": "max dev",
     "postinstall": "max setup",
-    "analyze": "cross-env ANALYZE=1 umi dev",
-    "start:nomock": "cross-env MOCK=none umi dev",
-    "start:prod.addone": "cross-env UMI_ENV=prod.addone umi dev",
+    "analyze": "cross-env ANALYZE=1 max dev",
+    "start:nomock": "cross-env MOCK=none max dev",
+    "start:prod.addone": "cross-env UMI_ENV=prod.addone max dev",
     "build": "cross-env UMI_ENV=prod max build",
     "build:local": "cross-env UMI_ENV=local max build",
     "build:dev": "cross-env UMI_ENV=dev max build",
@@ -22,10 +22,10 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^2.0.12",
-    "@hocgin/hkit": "^2.0.12",
-    "@hocgin/mock-kit": "^2.0.12",
-    "@hocgin/ui": "^5.0.3",
+    "@hocgin/browser-addone-kit": "^2.0.13",
+    "@hocgin/hkit": "^2.0.13",
+    "@hocgin/mock-kit": "^2.0.13",
+    "@hocgin/ui": "^5.0.5",
     "antd": "5.0.3",
     "classnames": "^2.3.1",
     "query-string": "^7.0.1"
@@ -34,7 +34,7 @@
     "@types/react": "17.0.44"
   },
   "devDependencies": {
-    "@hocgin/umijs-plugin-browser-addone": "^2.0.12",
+    "@hocgin/umijs-plugin-browser-addone": "^2.0.13",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "@types/mockjs": "^1.0.6",
     "@types/react": "^17.0.0",
