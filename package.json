@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "max dev",
+    "postinstall": "max setup",
     "analyze": "cross-env ANALYZE=1 umi dev",
     "start:nomock": "cross-env MOCK=none umi dev",
     "start:prod.addone": "cross-env UMI_ENV=prod.addone umi dev",
@@ -15,19 +16,10 @@
     "build:prod.ssr": "cross-env UMI_ENV=prod.ssr max build",
     "build:prod.cdn": "cross-env UMI_ENV=prod.cdn max build",
     "build:prod.addone": "cross-env UMI_ENV=prod.addone max build",
-    "postinstall": "max setup",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ]
   },
   "dependencies": {
     "@hocgin/browser-addone-kit": "^2.0.12",
@@ -43,11 +35,11 @@
   },
   "devDependencies": {
     "@hocgin/umijs-plugin-browser-addone": "^2.0.12",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "@types/mockjs": "^1.0.6",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@umijs/max": "^4.0.0",
-    "babel-plugin-transform-remove-console": "^6.9.4",
     "cross-env": "^7.0.3",
     "lint-staged": "^10.0.7",
     "mockjs": "^1.1.0",
