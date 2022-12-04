@@ -15,7 +15,6 @@
     "build:prod.ssr": "cross-env UMI_ENV=prod.ssr umi build",
     "build:prod.cdn": "cross-env UMI_ENV=prod.cdn umi build",
     "build:prod.addone": "cross-env UMI_ENV=prod.addone umi build",
-    "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
@@ -32,22 +31,19 @@
     ]
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^1.0.86",
-    "@hocgin/mock-kit": "^1.0.86",
-    "@hocgin/hkit": "^1.0.86",
-    "@hocgin/ui": "^4.2.8",
+    "@hocgin/browser-addone-kit": "^2.0.3",
+    "@hocgin/hkit": "^2.0.3",
+    "@hocgin/mock-kit": "^2.0.3",
+    "@hocgin/ui": "^4.0.45",
     "antd": "4.22.5",
     "classnames": "^2.3.1",
-    "mockjs": "^1.1.0",
-    "query-string": "^7.0.1",
-    "react": "17.x",
-    "react-dom": "17.x"
+    "query-string": "^7.0.1"
   },
   "resolutions": {
     "@types/react": "17.0.44"
   },
   "devDependencies": {
-    "@hocgin/umijs-plugin-browser-addone": "^1.0.86",
+    "@hocgin/umijs-plugin-browser-addone": "^2.0.3",
     "@types/mockjs": "^1.0.6",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -58,9 +54,12 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "cross-env": "^7.0.3",
     "lint-staged": "^10.0.7",
+    "mockjs": "^1.1.0",
     "prettier": "^2.2.0",
+    "react": "17.x",
+    "react-dom": "17.x",
     "typescript": "^4.1.2",
-    "yorkie": "^2.0.0",
-    "umi": "^3.5.20"
+    "umi": "^3.5.20",
+    "yorkie": "^2.0.0"
   }
 }

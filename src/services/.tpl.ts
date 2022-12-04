@@ -1,4 +1,4 @@
-import { request, usePost, StructKit } from '@hocgin/hkit';
+import { request, usePost, RabbitKit } from '@hocgin/hkit';
 import { stringify } from 'query-string';
 
 export default class {
@@ -39,8 +39,7 @@ export default class {
 
   static complete(payload = {}) {
     return usePost(`/ums/user-group/_complete`, { data: { ...payload } })
-      .then(StructKit.thenTryErrorIfExits)
-      .then(StructKit.thenData)
+      .then(RabbitKit.thenDataTryErrorIfExits)
       .then((data = []) =>
         data.map(({ typeName, encoding, id }: any) => ({
           key: encoding,
