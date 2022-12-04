@@ -3,21 +3,20 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "umi dev",
+    "start": "max dev",
     "analyze": "cross-env ANALYZE=1 umi dev",
     "start:nomock": "cross-env MOCK=none umi dev",
     "start:prod.addone": "cross-env UMI_ENV=prod.addone umi dev",
-    "build": "cross-env UMI_ENV=prod umi build",
-    "build:local": "cross-env UMI_ENV=local umi build",
-    "build:dev": "cross-env UMI_ENV=dev umi build",
-    "build:test": "cross-env UMI_ENV=test umi build",
-    "build:local.ssr": "cross-env UMI_ENV=local.ssr umi build",
-    "build:prod.ssr": "cross-env UMI_ENV=prod.ssr umi build",
-    "build:prod.cdn": "cross-env UMI_ENV=prod.cdn umi build",
-    "build:prod.addone": "cross-env UMI_ENV=prod.addone umi build",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage"
+    "build": "cross-env UMI_ENV=prod max build",
+    "build:local": "cross-env UMI_ENV=local max build",
+    "build:dev": "cross-env UMI_ENV=dev max build",
+    "build:test": "cross-env UMI_ENV=test max build",
+    "build:local.ssr": "cross-env UMI_ENV=local.ssr max build",
+    "build:prod.ssr": "cross-env UMI_ENV=prod.ssr max build",
+    "build:prod.cdn": "cross-env UMI_ENV=prod.cdn max build",
+    "build:prod.addone": "cross-env UMI_ENV=prod.addone max build",
+    "postinstall": "max setup",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -31,11 +30,11 @@
     ]
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^2.0.3",
-    "@hocgin/hkit": "^2.0.3",
-    "@hocgin/mock-kit": "^2.0.3",
-    "@hocgin/ui": "^4.0.45",
-    "antd": "4.22.5",
+    "@hocgin/browser-addone-kit": "^2.0.12",
+    "@hocgin/hkit": "^2.0.12",
+    "@hocgin/mock-kit": "^2.0.12",
+    "@hocgin/ui": "^5.0.3",
+    "antd": "5.0.3",
     "classnames": "^2.3.1",
     "query-string": "^7.0.1"
   },
@@ -43,14 +42,11 @@
     "@types/react": "17.0.44"
   },
   "devDependencies": {
-    "@hocgin/umijs-plugin-browser-addone": "^2.0.3",
+    "@hocgin/umijs-plugin-browser-addone": "^2.0.12",
     "@types/mockjs": "^1.0.6",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@umijs/plugin-qiankun": "^2.37.2",
-    "@umijs/preset-react": "^1.8.30",
-    "@umijs/test": "^3.5.20",
-    "babel-plugin-import": "^1.13.5",
+    "@umijs/max": "^4.0.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "cross-env": "^7.0.3",
     "lint-staged": "^10.0.7",
@@ -59,7 +55,6 @@
     "react": "17.x",
     "react-dom": "17.x",
     "typescript": "^4.1.2",
-    "umi": "^3.5.20",
     "yorkie": "^2.0.0"
   }
 }

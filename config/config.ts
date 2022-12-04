@@ -19,22 +19,21 @@ export default defineConfig({
   locale: {
     antd: true,
   },
-  antd: {},
+  antd: {
+    import: false,
+  },
   dva: {},
   qiankun: {
     slave: {
       shouldNotModifyDefaultBase: true,
     },
   },
-  outputPath: './dist',
-  favicon: 'https://cdn.hocgin.top/uPic/favicon.ico',
-  nodeModulesTransform: {
-    type: 'none',
-  },
+  outputPath: './dist' as any,
+  favicons: ['https://cdn.hocgin.top/uPic/favicon.ico'],
   manifest: {
     fileName: `manifest.json`,
   },
-  fastRefresh: {},
+  fastRefresh: true,
   proxy: {
     '/api': {
       // => 转到服务端地址
