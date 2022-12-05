@@ -1,6 +1,5 @@
 import styles from './index.less';
 import { Container } from '@/components';
-import { Link } from 'umi';
 
 export default function IndexPage() {
   return (

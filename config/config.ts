@@ -1,6 +1,27 @@
 import { defineConfig } from 'umi';
 import routerConfig from '../src/router.config';
+import { resolve } from 'path';
 
+export const CDNConfig = () => {
+  let dirs = __dirname.split('/');
+  let dirName = dirs[dirs.length - 2];
+  let result = process.env.USE_CDN !== 'true' ? {} : {
+    hash: true,
+    publicPath: `https://cdn.hocgin.top/${dirName}/`,
+  };
+  console.info('正在装配 CDN 配置', result);
+  return result;
+};
+export const SSRConfig = () => {
+  let result = process.env.USE_SSR !== 'true' ? {} : {
+    hash: true,
+    ssr: {
+      serverBuildPath: './dist_server/umi.server.js',
+    },
+  };
+  console.info('正在装配 SSR 配置', result);
+  return result;
+};
 export const useLogger = () => {
   let result: any = [];
   let offLogger = process.env.USE_LOG !== 'true';
@@ -23,6 +44,11 @@ export default defineConfig({
     import: false,
   },
   dva: {},
+  model: {},
+  alias: {
+    '@': resolve('../src'),
+  },
+  initialState: {},
   qiankun: {
     slave: {
       shouldNotModifyDefaultBase: true,
@@ -47,4 +73,6 @@ export default defineConfig({
   extraBabelPlugins: [
     ...useLogger(),
   ],
+  ...SSRConfig(),
+  ...CDNConfig(),
 });

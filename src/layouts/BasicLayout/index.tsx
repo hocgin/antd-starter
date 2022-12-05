@@ -1,12 +1,12 @@
 import styles from './index.less';
 import React from 'react';
-import {Footer} from "@hocgin/ui";
+import { Outlet } from 'umi';
 
-const BasicLayout: React.FC<{}> = (props, ref) => {
+const BasicLayout: React.FC<{}> = () => {
   return (<div className={styles.normal}>
     <h1 className={styles.title}>Yay! Welcome to umi!</h1>
-    {props.children}
-    <Footer />
+    <Outlet />
+    {/*<Footer />*/}
   </div>);
 };
 export default BasicLayout;

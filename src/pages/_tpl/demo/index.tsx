@@ -6,26 +6,22 @@ import {
   Link,
   SelectLang,
   getAllLocales,
-  localeInfo,
+  getLocale,
 } from 'umi';
 import { DatePicker } from 'antd';
-import { Utils } from '@hocgin/ui';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import { FormatKit } from '@hocgin/ui';
 
 const Index: React.FC<{
-  /**
-   * 设置样式名
-   */
   className?: string;
-}> = (props, ref) => {
+}> = (props) => {
   // 全局状态管理
-  const { initialState, loading, error, refresh, setInitialState } =
-    useModel('@@initialState');
+  const { initialState, loading, error, refresh, setInitialState } = useModel('@@initialState');
   const { user, fetchUser } = useModel('apps');
   let intl = useIntl();
 
-  console.log('->', moment.version, moment.locale());
-  console.log('->', getAllLocales(), localeInfo);
+  console.log('->', dayjs.locale());
+  console.log('->', getAllLocales(), getLocale());
   console.log('00', intl.formatRelativeTime(1, 'day'));
   console.debug('console.debug');
   console.log('console.log');
@@ -42,10 +38,10 @@ const Index: React.FC<{
         <SelectLang />
       </h1>
       <div>多语言文本: {intl.formatMessage({ id: 'demo.title' })}</div>
-      <div>多语言时间: {moment(1316116057189).fromNow()}</div>
-      <div onClick={() => moment.locale('zh-cn')}>
-        多语言时间:{' '}
-        {Utils.Format.DateTime.relativeFromNow(new Date().getTime() - 1000)}
+      <div>多语言时间(code): {dayjs.unix(1316116057189).fromNow()}</div>
+      <div>多语言时间(intl): {intl.formatRelativeTime(1, 'day')}</div>
+      <div onClick={() => dayjs.locale('zh-cn')}>
+        多语言时间(hkit):{FormatKit.toRelativeDateStr(new Date().getTime() - 1000)}
       </div>
       <div>
         多语言时间: <DatePicker />

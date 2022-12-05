@@ -5,7 +5,7 @@ import { useState, useCallback } from 'react';
  */
 export default () => {
   const [user, setUser] = useState(null);
-  const fetchUser = useCallback((account, password) => {
+  const fetchUser = useCallback((account: string, password: string) => {
     console.log('发起请求', account, password);
   }, []);
 
