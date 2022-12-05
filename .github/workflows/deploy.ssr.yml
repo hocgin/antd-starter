@@ -52,7 +52,7 @@ jobs:
         run: npm run build:prod.ssr
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
-          USE_LOG: false
+          LOG: false
       - uses: hocgin/action-qiniu-upload@master
         with:
           access_key: ${{ env.QINIU_ACCESS_KEY }}

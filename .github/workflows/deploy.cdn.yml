@@ -59,7 +59,7 @@ jobs:
         run: npm run build:prod.cdn
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
-          USE_LOG: false
+          LOG: false
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:

@@ -2,36 +2,36 @@ import { defineConfig } from 'umi';
 import routerConfig from '../src/router.config';
 import { resolve } from 'path';
 
+const enabled = (key: 'cdn' | 'ssr' | 'log') => {
+  return `${process.env[`${key.toUpperCase()}`]}`.toLowerCase() !== 'true';
+};
 export const CDNConfig = () => {
   let dirs = __dirname.split('/');
   let dirName = dirs[dirs.length - 2];
-  let result = process.env.USE_CDN !== 'true' ? {} : {
+  let result = enabled('cdn') ? {
     hash: true,
     publicPath: `https://cdn.hocgin.top/${dirName}/`,
-  };
+  } : {};
   console.info('正在装配 CDN 配置', result);
   return result;
 };
 export const SSRConfig = () => {
-  let result = process.env.USE_SSR !== 'true' ? {} : {
+  let result = enabled('ssr') ? {
     hash: true,
     ssr: {
       serverBuildPath: './dist_server/umi.server.js',
     },
-  };
+  } : {};
   console.info('正在装配 SSR 配置', result);
   return result;
 };
 export const useLogger = () => {
-  let result: any = [];
-  let offLogger = process.env.USE_LOG !== 'true';
-  console.debug(`[${offLogger ? '禁用' : '启用'}]日志打印`);
-  if (offLogger) {
-    result.push([
-      'transform-remove-console',
-      { exclude: ['error', 'warn', 'info'] },
-    ]);
-  }
+  let result: any = enabled('log') ? [[
+    'transform-remove-console',
+    { exclude: ['error', 'warn', 'info'] },
+  ]] : [];
+
+  console.debug(`正在装配 LOG 配置`, result);
   return result;
 };
 

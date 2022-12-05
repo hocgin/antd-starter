@@ -9,8 +9,8 @@
     "start:nomock": "cross-env MOCK=none max dev",
     "start:prod.addone": "cross-env UMI_ENV=prod.addone max dev",
     "build": "cross-env UMI_ENV=prod max build",
-    "build:prod.ssr": "cross-env USE_SSR=true USE_CDN=true max build",
-    "build:prod.cdn": "cross-env USE_CDN=true max build",
+    "build:prod.ssr": "cross-env UMI_ENV=prod SSR=true CDN=true max build",
+    "build:prod.cdn": "cross-env UMI_ENV=prod CDN=true max build",
     "build:prod.addone": "cross-env UMI_ENV=prod.addone max build",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
   },
