@@ -3,7 +3,7 @@ import routerConfig from '../src/router.config';
 import { resolve } from 'path';
 
 const enabled = (key: 'cdn' | 'ssr' | 'log') => {
-  return `${process.env[`${key.toUpperCase()}`]}`.toLowerCase() !== 'true';
+  return `${process.env[`${key.toUpperCase()}`]}`.toLowerCase() === 'true';
 };
 export const CDNConfig = () => {
   let dirs = __dirname.split('/');
