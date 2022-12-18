@@ -1,20 +1,12 @@
-import { addLocale, getAllLocales, localeInfo } from 'umi';
+import { getAllLocales } from 'umi';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import '@/request.config';
+
+dayjs.extend(relativeTime);
 
 // 国际化配置
 getAllLocales().forEach((locale) => {
-  let momentLocale =
-    {
-      'zh-CN': 'zh-cn',
-      'en-US': 'en',
-    }[locale] ?? 'zh-cn';
-  let localeItem = localeInfo[locale];
-  addLocale(locale, localeItem.messages, {
-    antd: localeItem.antd,
-    momentLocale: !!localeItem.momentLocale
-      ? localeItem.momentLocale
-      : momentLocale,
-  });
 });
 
 // 全局状态配置
