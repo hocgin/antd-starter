@@ -1,5 +1,9 @@
 import { defineConfig } from 'umi';
 import routerConfig from '../src/router.config';
+import { theme } from 'antd';
+
+const { defaultAlgorithm, defaultSeed } = theme;
+const mapToken = defaultAlgorithm(defaultSeed);
 
 export const useLogger = () => {
   let result: any = [];
@@ -48,4 +52,10 @@ export default defineConfig({
   extraBabelPlugins: [
     ...useLogger(),
   ],
+  lessLoader: {
+    modifyVars: {
+      ...mapToken,
+      // 'ant-prefix': ANT_PREFIX_CLS,
+    },
+  },
 });
