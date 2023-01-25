@@ -23,7 +23,9 @@ export default defineConfig({
   locale: {
     antd: true,
   },
-  antd: {},
+  antd: {
+    disableBabelPluginImport: true,
+  },
   dva: {},
   qiankun: {
     slave: {
@@ -49,9 +51,7 @@ export default defineConfig({
   },
   theme: {},
   routes: [...routerConfig],
-  extraBabelPlugins: [
-    ...useLogger(),
-  ],
+  extraBabelPlugins: [...useLogger()],
   lessLoader: {
     modifyVars: {
       ...mapToken,
