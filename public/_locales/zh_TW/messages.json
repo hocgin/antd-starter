@@ -1,16 +1,20 @@
 {
-  "extension_name": {"message": "擴充功能 - 名稱"},
-  "extension_description": {"message": "擴充功能 - 描述"},
-  "extension_action_title": {"message": "擴充功能 - 彈窗標題"},
+  "extension_name": { "message": "擴充功能 - 名稱" },
+  "extension_description": { "message": "擴充功能 - 描述" },
+  "extension_action_title": { "message": "擴充功能 - 彈窗標題" },
 
-  "__About": {"message": "\uD83C\uDF89 關於作者"},
-  "__About_Donate": {"message": "\uD83D\uDC95 鼓勵作者"},
-  "__About_Feedback": {"message": "\uD83E\uDD14 意見回饋"},
-  "__About_Help": {"message": "\uD83C\uDFB6 幫助文件"},
-  "__About_Recommend": {"message": "\uD83E\uDDF5 更多作品"},
-  "__UserInfo": {"message": "\uD83D\uDE0A 帳戶資訊"},
-  "__UserUnLogged": {"message": "\uD83D\uDE11 未登錄"},
-  "__Logout": {"message": "退出登錄"},
-  "__UpdateNotifyTitle": {"message": "版本更新"},
-  "__UpdateNotifyMessage": {"message": "\uD83C\uDF89 發生較大的版本更新，點擊查看"}
+  "recommend": { "message": "推薦" },
+
+  "__About": { "message": "\uD83C\uDF89 關於作者" },
+  "__About_Donate": { "message": "\uD83D\uDC95 鼓勵作者" },
+  "__About_Feedback": { "message": "\uD83E\uDD14 意見回饋" },
+  "__About_Help": { "message": "\uD83C\uDFB6 幫助文件" },
+  "__About_Recommend": { "message": "\uD83E\uDDF5 更多作品" },
+  "__UserInfo": { "message": "\uD83D\uDE0A 帳戶資訊" },
+  "__UserUnLogged": { "message": "\uD83D\uDE11 未登錄" },
+  "__Logout": { "message": "退出登錄" },
+  "__UpdateNotifyTitle": { "message": "版本更新" },
+  "__UpdateNotifyMessage": {
+    "message": "\uD83C\uDF89 發生較大的版本更新，點擊查看"
+  }
 }

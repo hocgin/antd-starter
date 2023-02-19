@@ -1,16 +1,20 @@
 {
-  "extension_name": {"message": "Plugin - Name"},
-  "extension_description": {"message": "Plugin - Description"},
-  "extension_action_title": {"message": "Plugin - Popup Title"},
+  "extension_name": { "message": "Plugin - Name" },
+  "extension_description": { "message": "Plugin - Description" },
+  "extension_action_title": { "message": "Plugin - Popup Title" },
 
-  "__About": {"message": "\uD83C\uDF89 About the Author"},
-  "__About_Donate": {"message": "\uD83D\uDC95 Encourage the Author"},
-  "__About_Feedback": {"message": "\uD83E\uDD14 Feedback"},
-  "__About_Help": {"message": "\uD83C\uDFB6 Help Documentation"},
-  "__About_Recommend": {"message": "\uD83E\uDDF5 More Works"},
-  "__UserInfo": {"message": "\uD83D\uDE0A Account Information"},
-  "__UserUnLogged": {"message": "\uD83D\uDE11 Not Logged In"},
-  "__Logout": {"message": "Log Out"},
-  "__UpdateNotifyTitle": {"message": "Version Update"},
-  "__UpdateNotifyMessage": {"message": "\uD83C\uDF89 There is a major version update, click to view"}
+  "recommend": { "message": "REC" },
+
+  "__About": { "message": "\uD83C\uDF89 About the Author" },
+  "__About_Donate": { "message": "\uD83D\uDC95 Encourage the Author" },
+  "__About_Feedback": { "message": "\uD83E\uDD14 Feedback" },
+  "__About_Help": { "message": "\uD83C\uDFB6 Help Documentation" },
+  "__About_Recommend": { "message": "\uD83E\uDDF5 More Works" },
+  "__UserInfo": { "message": "\uD83D\uDE0A Account Information" },
+  "__UserUnLogged": { "message": "\uD83D\uDE11 Not Logged In" },
+  "__Logout": { "message": "Log Out" },
+  "__UpdateNotifyTitle": { "message": "Version Update" },
+  "__UpdateNotifyMessage": {
+    "message": "\uD83C\uDF89 There is a major version update, click to view"
+  }
 }
