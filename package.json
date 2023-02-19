@@ -32,17 +32,17 @@
     ]
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^2.0.29",
-    "@hocgin/hkit": "^2.0.29",
-    "@hocgin/ui": "^5.0.17",
-    "antd": "^5.1.2",
+    "@hocgin/browser-addone-kit": "^2.0.37",
+    "@hocgin/hkit": "^2.0.37",
+    "@hocgin/ui": "^5.0.20",
+    "antd": "^5.2.2",
     "classnames": "^2.3.1",
     "query-string": "^7.0.1",
     "react": "18.x",
     "react-dom": "18.x"
   },
   "devDependencies": {
-    "@hocgin/mock-kit": "^2.0.29",
+    "@hocgin/mock-kit": "^2.0.37",
     "@hocgin/umijs-plugin-browser-addone": "^1.0.93",
     "@types/mockjs": "^1.0.6",
     "@types/react": "^18.x",
