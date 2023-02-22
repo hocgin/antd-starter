@@ -8,15 +8,17 @@ WebExtension.kit.serviceWorker({
   ...ServiceWorkerOptions.default,
   projectId: Config.getProjectId(),
   getUpdateURL: (extensionId: string, projectId: string) => {
-    let queryStr = stringify({ extensionId });
-    return `https://logspot.hocgin.top/${projectId}?${queryStr}`;
+    let queryStr = stringify({
+      extensionId,
+      update: true
+    });
+    return `https://logspot.hocgin.top/${projectId}_changelog?${queryStr}`;
   },
   getInstallURL: (extensionId: string, projectId: string) => {
-    let queryStr = stringify({ extensionId });
+    let queryStr = stringify({
+      extensionId,
+      install: true
+    });
     return `https://logspot.hocgin.top/${projectId}?${queryStr}`;
-  },
-  getUninstallURL: (extensionId: string, projectId: string) => {
-    let queryStr = stringify({ extensionId, projectId });
-    return `https://github.com/hocgin/feedback/issues?${queryStr}`;
   },
 });
