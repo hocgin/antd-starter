@@ -2,9 +2,8 @@
   "extension_name": { "message": "插件 - 名称" },
   "extension_description": { "message": "插件 - 描述" },
   "extension_action_title": { "message": "插件 - 弹窗标题" },
-
+  "lang": { "message": "zh-cn" },
   "recommend": { "message": "推荐" },
-
   "__About": { "message": "\uD83C\uDF89 关于作者" },
   "__About_Donate": { "message": "\uD83D\uDC95 鼓励作者" },
   "__About_Feedback": { "message": "\uD83E\uDD14 意见反馈" },
@@ -14,7 +13,5 @@
   "__UserUnLogged": { "message": "\uD83D\uDE11 未登录" },
   "__Logout": { "message": "退出登录" },
   "__UpdateNotifyTitle": { "message": "版本更新" },
-  "__UpdateNotifyMessage": {
-    "message": "\uD83C\uDF89 发生较大的版本更新，点击查看"
-  }
+  "__UpdateNotifyMessage": {"message": "\uD83C\uDF89 发生较大的版本更新，点击查看"}
 }
