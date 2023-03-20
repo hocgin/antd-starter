@@ -8,10 +8,3 @@ import { I18nKit } from '@hocgin/browser-addone-kit';
 
 dayjs.extend(relativeTime);
 dayjs.locale(I18nKit.getMessageOrDefault('lang', 'en'));
-
-// 全局状态配置
-export async function getInitialState() {
-  return {
-    author: 'hocgin',
-  };
-}
