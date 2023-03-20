@@ -14,6 +14,7 @@ export default defineConfig({
   extensions: {
     name: '__MSG_extension_name__',
     description: '__MSG_extension_description__',
+    homepageUrl: `https://logspot.hocgin.top/${pkg.name}`,
     defaultLocale: 'en',
     icons: '../public/logo.png',
     action: {
