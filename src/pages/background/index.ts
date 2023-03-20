@@ -7,18 +7,4 @@ import Config from '@/config';
 WebExtension.kit.serviceWorker({
   ...ServiceWorkerOptions.default,
   projectId: Config.getProjectId(),
-  getUpdateURL: (extensionId: string, projectId: string) => {
-    let queryStr = stringify({
-      extensionId,
-      update: true
-    });
-    return `https://logspot.hocgin.top/${projectId}_changelog?${queryStr}`;
-  },
-  getInstallURL: (extensionId: string, projectId: string) => {
-    let queryStr = stringify({
-      extensionId,
-      install: true
-    });
-    return `https://logspot.hocgin.top/${projectId}?${queryStr}`;
-  },
 });
