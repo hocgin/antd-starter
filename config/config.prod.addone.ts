@@ -1,6 +1,7 @@
 import { defineConfig } from 'umi';
 import { BrowserAddoneExtensionsType } from '@hocgin/umijs-plugin-browser-addone';
 import pkg from '../package.json';
+import { WebExtension } from '@hocgin/browser-addone-kit';
 
 export default defineConfig({
   define: {
@@ -22,6 +23,7 @@ export default defineConfig({
       defaultPopup: '@/pages/popup',
     },
     contentScripts: [
+      WebExtension.kit.authorizationScriptConfig(['@/pages/contentscripts/authorization']),
       {
         matches: ['<all_urls>'],
         entries: ['@/pages/contentscripts'],
