@@ -1,9 +1,9 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@hocgin/browser-addone-kit': ^2.0.45
-  '@hocgin/hkit': ^2.0.45
-  '@hocgin/mock-kit': ^2.0.45
+  '@hocgin/browser-addone-kit': ^2.0.62
+  '@hocgin/hkit': ^2.0.62
+  '@hocgin/mock-kit': ^2.0.62
   '@hocgin/ui': ^5.0.20
   '@hocgin/umijs-plugin-browser-addone': ^1.0.93
   '@types/mockjs': ^1.0.6
@@ -26,9 +26,9 @@ specifiers:
   yorkie: ^2.0.0
 
 dependencies:
-  '@hocgin/browser-addone-kit': 2.0.45_bh3onqbyifcrmub7y7dr3cb22q
-  '@hocgin/hkit': 2.0.45_dayjs@1.11.7
-  '@hocgin/ui': 5.0.20_opsv6pu7mp3dd6ynzxko4cr3ie
+  '@hocgin/browser-addone-kit': 2.0.62_6wj5ev6z63a344vtfxeu4jwa74
+  '@hocgin/hkit': 2.0.62_dayjs@1.11.7
+  '@hocgin/ui': 5.0.20_fobi6f7end75fahajprj2vxiom
   antd: 5.2.2_biqbaboplfbrettd7655fr4n2y
   classnames: 2.3.2
   query-string: 7.1.3
@@ -36,7 +36,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@hocgin/mock-kit': 2.0.45_biqbaboplfbrettd7655fr4n2y
+  '@hocgin/mock-kit': 2.0.62_biqbaboplfbrettd7655fr4n2y
   '@hocgin/umijs-plugin-browser-addone': 1.0.93_2frbxtmzgdfbmo3mvpvo7kg544
   '@types/mockjs': 1.0.7
   '@types/react': 18.0.26
@@ -1023,36 +1023,35 @@ packages:
     deprecated: the package is rather renamed to @formatjs/ecma-abstract with some changes in functionality (primarily selectUnit is removed and we don't plan to make any further changes to this package
     dev: true
 
-  /@hocgin/ahooks-kit/2.0.16_bh3onqbyifcrmub7y7dr3cb22q:
+  /@hocgin/ahooks-kit/2.0.16_6wj5ev6z63a344vtfxeu4jwa74:
     resolution: {integrity: sha512-ClWKkbb4X6xibyKM7fkfW1e+2IH+HVzW3u+FVqnVZSuvzAdG7l8jCEVai5BtirjoqbNZsaSZXg70yjei5k1H/A==}
     peerDependencies:
       '@hocgin/hkit': workspace:*
       react: ^18
       react-dom: ^18
     dependencies:
-      '@hocgin/hkit': 2.0.45_dayjs@1.11.7
+      '@hocgin/hkit': 2.0.62_dayjs@1.11.7
       ahooks: 3.7.3_react@18.2.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /@hocgin/browser-addone-kit/2.0.45_bh3onqbyifcrmub7y7dr3cb22q:
-    resolution: {integrity: sha512-eWM4cE9lNVhOPtmoY2+t7mxX8NM2lXp37Okxx8vW9MGhq/LoN3+FvbQev3tvbi0GqznkvNKxf5tD8E3Z3McC4g==}
+  /@hocgin/browser-addone-kit/2.0.62_6wj5ev6z63a344vtfxeu4jwa74:
+    resolution: {integrity: sha512-jiN5s589yE8r98L5Ci0lZ5aj+GjqriTrf2cVegrxc2PXsMJoJvz608gk+fr7XeWMpxzIFCMaJngqv2KDv57bPA==}
     peerDependencies:
       '@hocgin/hkit': workspace:*
       react: ^18
       react-dom: ^18
     dependencies:
-      '@hocgin/hkit': 2.0.45_dayjs@1.11.7
-      expiry-map: 2.0.0
-      js-md5: 0.7.3
+      '@hocgin/hkit': 2.0.62_dayjs@1.11.7
+      insertion-query: 1.1.0
       query-string: 7.1.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /@hocgin/hkit/2.0.45_dayjs@1.11.7:
-    resolution: {integrity: sha512-cF/i3Wcz8nau9jzOr4NdkM5L2IdK9OglBgldfEwnNviyhJ7hKZTfAMEUTNbq1kX8UlSQJ5H+KNQlcMBjY1E0zQ==}
+  /@hocgin/hkit/2.0.62_dayjs@1.11.7:
+    resolution: {integrity: sha512-XVqQrvLbi8ZJgwFzXHJ1Lcp0n1POUtRAiAkxjRlrHyP0LPC9Vc5saM5l5q/J6eN95BRPazKyVbdOBVbnEaqufQ==}
     peerDependencies:
       dayjs: ^1.11.1
     dependencies:
@@ -1061,8 +1060,8 @@ packages:
       umi-request: 1.4.0
     dev: false
 
-  /@hocgin/mock-kit/2.0.45_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-OoyNj3xZof5WH+yPsn1I3B06pHg0NXrLPk3mDBDZvEZLl5D0VDKH8k5sm0HBYPfm+tL1T9wIR+xLB+xCv2jJzg==}
+  /@hocgin/mock-kit/2.0.62_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-GCJrdlWwrc1R4LVBh08RdoROuZvnVsXWcrnp40IjYiJOTInkxT5QdpHC8UXmILqX10eLnzI+tQSjUm63MUnAjg==}
     peerDependencies:
       react: ^16
       react-dom: ^16
@@ -1072,7 +1071,7 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: true
 
-  /@hocgin/ui/5.0.20_opsv6pu7mp3dd6ynzxko4cr3ie:
+  /@hocgin/ui/5.0.20_fobi6f7end75fahajprj2vxiom:
     resolution: {integrity: sha512-TRI7OxIMpiJn4h7nybAHb5mMh31rkCvQGMBwFynhTNSZNWIdyv70MCaHWRrvlUMcdZxeRQElMvFiaYvpER+17A==}
     peerDependencies:
       '@hocgin/ahooks-kit': ^2.0.16
@@ -1085,8 +1084,8 @@ packages:
       '@ant-design/icons': 5.0.1_biqbaboplfbrettd7655fr4n2y
       '@ant-design/pro-components': 2.3.47_xrdag4fhnsdts4zkyqbvlsya5e
       '@babel/runtime': 7.20.6
-      '@hocgin/ahooks-kit': 2.0.16_bh3onqbyifcrmub7y7dr3cb22q
-      '@hocgin/hkit': 2.0.45_dayjs@1.11.7
+      '@hocgin/ahooks-kit': 2.0.16_6wj5ev6z63a344vtfxeu4jwa74
+      '@hocgin/hkit': 2.0.62_dayjs@1.11.7
       '@tiptap/core': 2.0.0-beta.209_rd5pjtxohzfgv2zee3iufpqkay
       '@tiptap/extension-blockquote': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
       '@tiptap/extension-bold': 2.0.0-beta.209_f4ffqkgz5d3wev7su7t7l2rrua
@@ -1935,6 +1934,7 @@ packages:
 
   /@tiptap/prosemirror-tables/1.1.3:
     resolution: {integrity: sha512-Pp7Iyup+kxniDGEvFHX+BRw3et9vys83NVqk6B+PbVAztq64QyX/mY+vzcpFmOsF9/th+Po981igbGUG7C/8hw==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dependencies:
       prosemirror-keymap: 1.2.0
       prosemirror-model: 1.18.3
@@ -4949,13 +4949,6 @@ packages:
       jest-regex-util: 26.0.0
     dev: true
 
-  /expiry-map/2.0.0:
-    resolution: {integrity: sha512-K1I5wJe2fiqjyUZf/xhxwTpaopw3F+19DsO7Oggl20+3SVTXDIevVRJav0aBMfposQdkl2E4+gnuOKd3j2X0sA==}
-    engines: {node: '>=8'}
-    dependencies:
-      map-age-cleaner: 0.2.0
-    dev: false
-
   /extend-shallow/2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
     engines: {node: '>=0.10.0'}
@@ -5495,6 +5488,10 @@ packages:
   /ini/1.3.8:
     resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
     dev: true
+
+  /insertion-query/1.1.0:
+    resolution: {integrity: sha512-5HZCK1xmD+Cm5q9/Qk1S8tr2BqHtcvseGsg7LKD3WlHRg4OOCl7d6C5raGNXAhfV4NlUcHmAtdJt0b3vJPEuiA==}
+    dev: false
 
   /intersection-observer/0.12.2:
     resolution: {integrity: sha512-7m1vEcPCxXYI8HqnL8CKI6siDyD+eIWSwgB3DZA+ZTogxk9I4CDnj4wilt9x/+/QbHI4YG5YZNmC6458/e9Ktg==}
@@ -6284,10 +6281,6 @@ packages:
     resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}
     dev: false
 
-  /js-md5/0.7.3:
-    resolution: {integrity: sha512-ZC41vPSTLKGwIRjqDh8DfXoCrdQIyBgspJVPXHBGu4nZlAEvG3nf+jO9avM9RmLiGakg7vz974ms99nEV0tmTQ==}
-    dev: false
-
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -6587,13 +6580,6 @@ packages:
     dependencies:
       tmpl: 1.0.5
     dev: true
-
-  /map-age-cleaner/0.2.0:
-    resolution: {integrity: sha512-AvxTC6id0fzSf6OyNBTp1syyCuKO7nOJvHgYlhT0Qkkjvk40zZo+av3ayVgXlxnF/DxEzEfY9mMdd7FHsd+wKQ==}
-    engines: {node: '>=7.6'}
-    dependencies:
-      p-defer: 1.0.0
-    dev: false
 
   /map-cache/0.2.2:
     resolution: {integrity: sha512-8y/eV9QQZCiyn1SprXSrCmqJN0yNRATe+PO8ztwqrvrbdRLA3eYJF0yaR0YayLWkMbsQSKWS9N2gPcGEc4UsZg==}
@@ -6998,11 +6984,6 @@ packages:
   /os-browserify/0.3.0:
     resolution: {integrity: sha512-gjcpUc3clBf9+210TRaDWbf+rZZZEshZ+DlXMRCeAjp0xhTrnQsKHypIy1J3d5hKdUzj69t708EHtU8P6bUn0A==}
     dev: true
-
-  /p-defer/1.0.0:
-    resolution: {integrity: sha512-wB3wfAxZpk2AzOfUMJNL+d36xothRSyj8EXOa4f6GMqYDN9BJaaSISbsk+wS9abmnebVw95C2Kb5t85UmpCxuw==}
-    engines: {node: '>=4'}
-    dev: false
 
   /p-each-series/2.2.0:
     resolution: {integrity: sha512-ycIL2+1V32th+8scbpTvyHNaHe02z0sjgh91XXjAk+ZeXoPN4Z46DVUnzdso0aX4KckKw0FNNFHdjZ2UsZvxiA==}

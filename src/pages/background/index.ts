@@ -1,7 +1,6 @@
 import { WebExtension } from '@hocgin/browser-addone-kit';
 import { ServiceWorkerOptions } from '@hocgin/browser-addone-kit/dist/esm/browser/serviceWorker';
 import '@/request.config';
-import { stringify } from 'query-string';
 import Config from '@/config';
 
 WebExtension.kit.serviceWorker({
