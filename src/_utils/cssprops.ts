@@ -1,12 +1,12 @@
-import { CssPropsKit } from '@hocgin/hkit';
+import { CssPropsKit as _CssPropsKit } from '@hocgin/hkit';
 
 export enum CssPropsKey {
 
 }
 
-export let cssPropsKit = CssPropsKit.create<CssPropsKey | any, string>();
+export let cssPropsKit = _CssPropsKit.create<CssPropsKey | any, string>();
 
-export default class CssProps {
+export class CssPropsKit {
   static setBackgroundColor(value: string = 'unset') {
     cssPropsKit.set('--background-color', value);
   }

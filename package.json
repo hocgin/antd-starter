@@ -15,11 +15,10 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^2.0.16",
-    "@hocgin/hkit": "^2.0.16",
-    "@hocgin/mock-kit": "^2.0.16",
-    "@hocgin/ui": "^5.0.7",
-    "antd": "5.0.3",
+    "@hocgin/hkit": "^2.0.73",
+    "@hocgin/ui": "^5.0.20",
+    "antd": "^5.4.6",
+    "@hocgin/mock-kit": "^2.0.73",
     "classnames": "^2.3.1",
     "express": "^4.18.2",
     "query-string": "^7.0.1"
@@ -30,11 +29,10 @@
   },
   "devDependencies": {
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "@hocgin/umijs-plugin-browser-addone": "^2.0.16",
     "@types/mockjs": "^1.0.6",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@umijs/max": "^4.0.0",
+    "@umijs/max": "^4.0.67",
     "cross-env": "^7.0.3",
     "lint-staged": "^10.0.7",
     "mockjs": "^1.1.0",

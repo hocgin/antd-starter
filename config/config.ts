@@ -1,14 +1,15 @@
 import { defineConfig } from 'umi';
 import routerConfig from '../src/router.config';
 import { resolve } from 'path';
+import pkg from '../package.json';
 
-const enabled = (key: 'cdn' | 'ssr' | 'log') => {
+const enabled = (key: 'USE_CDN' | 'USE_SSR' | 'USE_LOG') => {
   return `${process.env[`${key.toUpperCase()}`]}`.toLowerCase() === 'true';
 };
 export const CDNConfig = () => {
   let dirs = __dirname.split('/');
   let dirName = dirs[dirs.length - 2];
-  let result = enabled('cdn') ? {
+  let result = enabled('USE_CDN') ? {
     hash: true,
     publicPath: `https://cdn.hocgin.top/${dirName}/`,
   } : {};
@@ -16,7 +17,7 @@ export const CDNConfig = () => {
   return result;
 };
 export const SSRConfig = () => {
-  let result = enabled('ssr') ? {
+  let result = enabled('USE_SSR') ? {
     hash: true,
     ssr: {
       serverBuildPath: './dist_server/umi.server.js',
@@ -26,7 +27,7 @@ export const SSRConfig = () => {
   return result;
 };
 export const useLogger = () => {
-  let result: any = enabled('log') ? [[
+  let result: any = enabled('USE_LOG') ? [[
     'transform-remove-console',
     { exclude: ['error', 'warn', 'info'] },
   ]] : [];
@@ -47,6 +48,9 @@ export default defineConfig({
   model: {},
   alias: {
     '@': resolve('../src'),
+  },
+  define: {
+    projectId: pkg.name,
   },
   initialState: {},
   qiankun: {
