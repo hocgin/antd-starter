@@ -8,5 +8,11 @@
   ],
   "regions": [
     "hkg1"
-  ]
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "main": false,
+      "gh-pages": true
+    }
+  }
 }
