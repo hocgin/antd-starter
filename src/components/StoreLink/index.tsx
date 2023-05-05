@@ -11,7 +11,7 @@ export const StoreLink: React.FC<{
       style={{ cursor: 'pointer' }}
       onClick={WebExtension.kit.openRecommendURL}
     >
-      {I18nKit.getMessageOrDefault('recommend' as any)}
+      {I18nKit.getMessageOrDefault('recommend')}
     </Tag>
   );
 };
