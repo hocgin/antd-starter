@@ -4,6 +4,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://api.hocgin.top/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
   "regions": [
