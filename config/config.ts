@@ -27,10 +27,10 @@ export const SSRConfig = () => {
   return result;
 };
 export const useLogger = () => {
-  let result: any = enabled('USE_LOG') ? [[
+  let result: any = enabled('USE_LOG') ? [] : [[
     'transform-remove-console',
-    { exclude: ['error', 'warn', 'info'] },
-  ]] : [];
+    {exclude: ['error', 'warn', 'info']},
+  ]];
 
   console.debug(`正在装配 LOG 配置`, result);
   return result;
