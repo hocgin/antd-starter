@@ -19,7 +19,6 @@ export const useLogger = () => {
 };
 
 export default defineConfig({
-  title: 'HOCGIN',
   locale: {
     antd: true,
   },

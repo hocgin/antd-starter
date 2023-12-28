@@ -29,24 +29,21 @@
     ]
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^2.0.73",
-    "@hocgin/hkit": "^2.0.73",
+    "@hocgin/browser-addone-kit": "^2.0.136",
+    "@hocgin/browser-addone-ui": "^2.0.136",
+    "@hocgin/hkit": "^2.0.136",
     "@hocgin/ui": "^5.0.20",
-    "antd": "^5.4.6",
+    "antd": "^5.12.5",
     "classnames": "^2.3.1",
     "query-string": "^7.0.1",
-    "react": "18.x",
-    "react-dom": "18.x"
+    "react": "^18.x",
+    "react-dom": "^18.x"
   },
   "devDependencies": {
-    "@hocgin/mock-kit": "^2.0.73",
     "@hocgin/umijs-plugin-browser-addone": "^1.0.93",
-    "@types/mockjs": "^1.0.6",
     "@types/react": "^18.x",
     "@types/react-dom": "^18.x",
     "@umijs/preset-react": "^1.8.30",
-    "@umijs/test": "^3.5.20",
-    "mockjs": "^1.1.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "cross-env": "^7.0.3",
     "lint-staged": "^10.0.7",

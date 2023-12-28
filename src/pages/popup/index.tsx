@@ -1,11 +1,7 @@
-import { Theme } from '@/components';
+import { withTheme } from '@/components';
 
-const Index = () => {
+const Home = () => {
   return <></>;
 };
 
-export default () => (
-  <Theme>
-    <Index />
-  </Theme>
-);
+export default () => withTheme(<Home />)

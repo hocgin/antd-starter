@@ -6,9 +6,9 @@ import { WebExtension } from '@hocgin/browser-addone-kit';
 export default defineConfig({
   define: {
     // api 地址
-    baseUrl: '',
+    baseUrl: 'https://feed.hocgin.com',
     // 单点登录地址
-    ssoServerUrl: '/login',
+    ssoServerUrl: 'https://sso.hocgin.com',
     projectId: pkg.name,
   },
   plugins: ['@hocgin/umijs-plugin-browser-addone'],
@@ -33,7 +33,7 @@ export default defineConfig({
     background: {
       serviceWorker: '@/pages/background/index',
     },
-    permissions: ['contextMenus', 'webRequest', 'storage', 'notifications'],
+    permissions: ['contextMenus', 'storage', 'notifications'],
     hostPermissions: ['<all_urls>'],
   } as BrowserAddoneExtensionsType,
 });
