@@ -29,11 +29,11 @@
     ]
   },
   "dependencies": {
-    "@hocgin/browser-addone-kit": "^2.0.136",
-    "@hocgin/browser-addone-ui": "^2.0.136",
-    "@hocgin/hkit": "^2.0.136",
-    "@hocgin/ui": "^5.0.20",
-    "antd": "^5.12.5",
+    "@hocgin/browser-addone-kit": "^2.0.147",
+    "@hocgin/browser-addone-ui": "^2.0.147",
+    "@hocgin/hkit": "^2.0.147",
+    "@hocgin/ui": "^5.0.34",
+    "antd": "^5.15.1",
     "classnames": "^2.3.1",
     "query-string": "^7.0.1",
     "react": "^18.x",
