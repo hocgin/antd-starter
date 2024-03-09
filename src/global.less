@@ -1,6 +1,17 @@
+html {
+  --background-color: 255， 255， 255;
+  --color: 0,0,0;
+}
+
+html.dark {
+  --background-color: 0,0,0;
+  --color: 255， 255， 255;
+}
+
 html,
 body {
   height: 100%;
+  background-color: rgba(var(--background-color), .88);
 }
 
 body {
